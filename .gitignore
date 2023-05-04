@@ -1,0 +1,5 @@
+# 忽略Git.html文件
+Git.html
+
+# 忽略 test 目录下所有的文件
+test/
