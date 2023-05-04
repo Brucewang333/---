@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <STYLE>
+/* 第一种： 使用定位伪元素遮盖末尾文字 */
+        .box2{
+            margin: 0 auto;
+            width: 200px;/* */
+            height: 100px;
+            background-color: pink;
+            overflow: hidden;/* 溢出隐藏 */
+            line-height: 20px;/* 设置行高与容器高度成倍数关系，这样避免文本溢出时，文字显示一半 */
+            text-align: justify;/* 设置文本对齐方式为两端对齐，这样在伪元素内容遮盖末尾文字时才能对齐*/
+            position: relative;/* 子绝父相，这里是为了给伪元素设置定位*/
+        }
+        /* 因为省略号是放在文本最后面的，所以使用伪元素after */
+        .box2::after{
+            content: "...";/* 省略号是放在文本最后面的 */
+            width: 1em;/* 设置伪元素的宽度为1em，是为了遮盖的时候正好遮盖中原来的一个字的大小*/
+            background-color: pink;/* 设置与父元素相同的背景颜色，同理，也是为了和原来的内容样式保持一致*/
+            position: absolute;/*设置定位，其位置就是文本的右下角 */
+            right: 0;bottom: 0; 
+        }
+
+/* 第二种办法： 利用旧版弹性盒
+步骤：
+
+给容器元素类型转换为display:-webkit-box;
+设置弹性盒子垂直排列-webkit-box-orient:vertical;
+控制要显示的行数-webkit-line-clamp：数值；
+溢出隐藏overflow:hidden; */
+          .box1 {
+            width: 150px;
+            height: 65px;
+            background-color: pink;
+            margin: 100px auto;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            /* 弹性伸缩盒子模型显示 */
+            display: -webkit-box;
+            /* 限制在一个块元素显示的文本的行数 */
+            -webkit-line-clamp: 3;
+            /* 设置或检索伸缩盒对象的子元素的排列方式 */
+            -webkit-box-orient: vertical;
+        }
+    </STYLE>
+</head>
+<body>
+    <div class="box1">
+        啥也不说，此处省略一万字,啥也不说，此处省略一万字此处省略一万字
+    </div>
+    <div class="box2">
+        我是文本我是文本我是文本我是文我是文我是文我是文我是文我是文我是文我是是文本我是文本我是文本我是文本我是文本我是文本我是文本
+    </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+/* video的属性值：
+autoplay	autoplay	如果出现该属性，则视频在就绪后马上播放。但是谷歌浏览器需要添加muted来解决自动播放问题。
+controls	controls	如果出现该属性，则向用户显示控件，比如播放按钮。
+height	pixels	设置视频播放器的高度。
+loop	loop	如果出现该属性，则当媒介文件完成播放后再次开始播放。
+muted	muted	规定视频的音频输出应该被静音。
+poster	URL	规定视频下载时显示的图像，或者在用户点击播放按钮前显示的图像。
+preload	auto：预先加载视频。
+none：不应加载视频	如果出现该属性，则视频在页面加载时进行加载，并预备播放。如果使用 “autoplay”，则忽略该属性。
+src	url	要播放的视频的 URL。
+width	pixels	设置视频播放器的宽度。
+ */
+         video {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <video src="Video/重庆森林.mov" controls="controls" autoplay="autoplay" muted="muted" loop="loop" ></video>
+</body>
+</html>

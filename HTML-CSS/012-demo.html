@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>类选择器画盒子</title>
+    <style>
+        /* 类选择器 */
+        .box{
+            width: 200px;
+            height: 200px;
+            font-size: 100px;
+        }
+        .red {
+            
+            background-color: red;
+        }
+        .yellow {
+           
+            background-color: rgb(198, 243, 35);
+        }
+        .green {
+            
+            background-color: rgb(19, 139, 61);
+        }
+        /* 类型选择器 */
+        table{
+            border-collapse:collapse
+        }
+        td{
+            text-align: center; 
+            vertical-align:middle;
+        }
+        /* id选择器 只能在每个HTML文档中出现一次*/
+        #only{
+            color: aqua;
+            font-family: 得意黑;
+            /* font属性，必须按语法格式中的顺序书写 不能更换 并且各个属性间以空格隔开
+                font-style font-weight font-size/line-height font-family;
+                不需要设置的属性可以省略(自动取默认值)，但必须保留font-size和font-family属性，
+                否则  font属性将不起作用
+            */
+        }
+        /* 通配符选择器 */
+        *{
+            margin: auto;
+            padding: 0%;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <div class="box red">红</div>
+            </td>
+            <td>
+                <div class="box yellow">黄 </div>
+            </td>
+            <td>
+                <div class="box green" id="only">绿</div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

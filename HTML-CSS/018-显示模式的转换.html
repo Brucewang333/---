@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>元素显示模式转换</title>
+    <!-- 块元素：
+    h1~h6，p，div，ul，ol，li 等。
+    块元素特点：
+    独占一行；
+    高度，宽度，外边距，内边距都可以控制（默认宽度是父级宽度的100%）；
+    本身也可以当作容器以及盒子，里面也可以放块元素和行内元素 -->
+    
+    <!-- 行内元素（内联元素）：
+    a，strong，b，em，i，del，s，ins，u，span 等。
+    行内元素特点：
+    一行可显示多个；
+    高度和宽度的直接设置是无效的（可通过模式转换间接设置）；
+    默认宽度是其内容本身的宽度；
+    行内元素只能容纳文本或其它行内元素。 
+    注意：
+    超链接里不能放超链接；
+    但是超链接里可以放块级元素，但是给超链接转换为块级模式最安全。-->
+
+    <!-- 行内块元素：
+    同时具有块元素和行内元素的特点，
+    img，input，td等。
+    行内块元素特点：
+    一行可显示多个，但是中间会有空隙；
+    默认宽度为本身内容的宽度；
+    高度，宽度，内外边距可以被控制。-->
+    
+    <style>
+        a {
+            width: 200px;
+            height: 200px;
+            color: black;
+            background-color: rgb(15, 117, 180);
+            /* 将 行内元素 a 转换为 块级元素 */
+            display: block;
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: #a5ad9e;
+            /* 将块级元素转换为行内元素 */
+            display: inline;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#">hahahahah我是行内元素</a>
+    <div>我是块级元素</div>
+    <div>我是块级元素</div>
+</body>
+
+</html>

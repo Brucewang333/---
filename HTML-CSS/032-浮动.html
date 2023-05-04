@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浮动</title>
+    <style>
+        /* 浮动特性：
+            1、脱离标准流的控制移动到指定位置
+            2、浮动的盒子不再保留原先的位置 
+            3、任何元素都可以浮动 添加浮动后具有行内块元素相似的特性
+            */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-color: #ff8750;
+            float: left;
+        }
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: #fff666;
+            /* float: right; */
+            /* float: left; */
+        }
+        .box3,.box4,span,a{
+            width: 100px;
+            height: 100px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3" style="background-color: #333;">1</div>
+    <div class="box4" style="background-color: #666;">2</div>
+    <span style="background-color: #922;">3</span>
+    <a href="#" style="background-color: #ff8821;">4</a>
+</body>
+</html>

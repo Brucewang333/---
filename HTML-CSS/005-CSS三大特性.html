@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>继承性</title>
+    <style>
+        div{
+            font-size: 14px;
+        }
+        body{
+            font: 12px/1.5 得意黑;
+        }
+        /* 如果子元素没有设置行高 则会继承父元素的行高为1.5
+            此时子元素的行高是：当前子元素的文字大小*1.5
+            body行高1.5 这样的写法优势在于里面的子元素可以根据文字大小自动调整行高
+        */
+    </style>
+</head>
+<body>
+    <div>hahhahah</div>
+    <p>xixixiixix</p>
+    <ul>
+        <li>heiheihei</li>
+    </ul>
+</body>
+</html>

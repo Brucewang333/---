@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 伪类选择器 用冒号：表示
+    静态伪类: 只能用于超链接的样式
+    :link 超链接点击之前
+    :visited 链接被访问过之后
+    动态伪类：针对所有标签都适用的样式
+    :hover “悬停”：鼠标放到标签上的时候
+    :active “激活”： 鼠标点击标签，但是不松手时。
+    :focus 是某个标签获得焦点时的样式（比如某个输入框获得焦点）
+    */
+        a:link {
+            color: red;
+        }
+        a:visited{
+            color: blanchedalmond;
+        }
+        a:hover{
+            color: blueviolet;
+        }
+        a:active{
+            color: green;
+        }
+        input:focus{
+            color: yellow;
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#">法克鱿</a>
+    <input type="text">
+    <p>hahah</p><p>wocao</p>
+</body>
+
+</html>

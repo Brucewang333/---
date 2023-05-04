@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>外边距合并</title>
+    <style>
+        .one,.two{
+            width: 200px;
+            height: 200px;
+            background-color: #ff8500;
+
+        }
+        /* .one{
+            margin-bottom: 30px;
+        } */
+        .two{
+            margin-top: 100px;
+        }
+        /* 当上下相邻的两个块元素（兄弟关系）相邻时，
+        如果上面的元素有下边距margin-bottom，下面的元素有上边距margin-top，
+        则他们之间的垂直间距不是margin-bottom与margin-top之和，
+        而是取两个值中的较大者，这种现象被称为相邻块元素垂直外边距的合并。 
+        解决方法：
+            尽量只给一个盒子添加外边距 
+        */
+    </style>
+</head>
+<body>
+    <div class="one">one</div>
+    <div class="two">two</div>
+</body>
+</html>

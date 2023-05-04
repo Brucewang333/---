@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>复合选择器</title>
+    <style>
+        /*  后代选择器 
+            元素1 元素2 {样式声明}
+            */
+        ol li {
+            color: blue
+        }
+
+        ol li a {
+            color: gray;
+        }
+
+        .six li a {
+            color: green;
+        }
+
+        /* 子选择器 */
+        .son>a {
+            color: aquamarine;
+        }
+
+        /* 并集选择器 */
+        div,
+        p,
+        .kuangbiao {
+            color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <ol>
+        <li>hahha</li>
+        <li>hahha</li>
+        <li><a href="#">hahha</a> </li>
+    </ol>
+    <ul class="six">
+        <li>xixixi</li>
+        <li>xixixi</li>
+        <li>xixixi</li>
+        <li><a href=""> xixixi</a></li>
+        <li><a href=""> xixixi</a></li>
+        <li><a href=""> xixixi</a></li>
+        <li><a href=""> xixixi</a></li>
+    </ul>
+    <div class="son">
+        <a href="#">儿子</a>
+        <p>
+            <a href="#">孙子</a>
+        </p>
+    </div>
+    <div class="five">强盛集团高启强</div>
+    <p>强盛</p>
+    <span>京海</span>
+    <ul class="kuangbiao">
+        <li>小龙</li>
+        <li>小虎</li>
+        <li>佩奇</li>
+    </ul>
+
+</body>
+
+</html>

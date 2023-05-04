@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .dj{
+            position: relative;
+            height: 280px;
+            width: 300px;
+            margin: 30px auto;
+        }
+        .dj img{
+            width: 100%;
+            height: 100%;
+        }
+        .mask{
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .4) url(images/arr.png) no-repeat center;
+        }   
+
+        .dj:hover .mask{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="dj">
+        <div class="mask"></div>
+        <img src="images/d81c31a318f5ca98a2e0950dacabcd65.webp" alt="">
+    </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单</title>
+</head>
+<body>
+    <!-- 表单的组成 表单域form、表单控件input select 、提示信息 -->
+    <!-- type的属性有text button file checkbox password hidden image 
+            radio reset submit -->
+    <form action="" method="post" name="表单1">
+        <!-- text 文本框 value属性表示已经填写好的值-->
+        用户名：<input type="text" name="username" value="" placeholder="cnm"> <br>
+        <!-- password 密码框 -->
+        密码：<input type="password" name="password" value="" placeholder="cnm 密码分大小写"> <br>
+        <!-- radio 单选框 -->
+        是否成年：是<input type="radio" name="age" value=">18" checked="checked"> 否<input type="radio" name="age" value="<18"> <br>
+       <!-- checkbox 复选框 -->
+        爱好：抽烟<input type="checkbox" name="hobbies" value="smoking"> 喝酒<input type="checkbox" value="drinking" 
+        name="hobbies"> 烫头<input type="checkbox" name="hobbies" value="perming"> 
+        蹦迪<input type="checkbox" name="hobbies" value="disco">
+        <!-- checked属性 默认选中状态 用于单选和复选按钮 -->
+        <!-- submit 提交表单的信息到后台 -->
+        <br>
+        <input type="submit" value="登录"> <br>
+        <input type="reset" value="重置"> <br>
+        <!-- button 定义可点击按钮 -->
+        <input type="button" value="点击这里"> <br>
+        <!-- file 文件域 上传文件使用的 -->
+        <input type="file"> <br>
+        <!-- textarea 文本域标签 --> <br>
+        这是一个文本域
+        <textarea name="" id="" cols="30" rows="10">
+天真得只有你 令神仙鱼归天要怪谁
+以为留在原地不够遨游 就让它沙滩里戏水
+那次得你冒险半夜上山 争拗中队友不想撑下去
+那时其实尝尽真正自由 但又感到没趣
+不要紧 山野都有雾灯 顽童亦学乖不敢太勇敢
+世上有多少个缤纷乐园 任你行
+        </textarea>
+    </form>
+    <!-- select 下拉表单 -->
+    籍贯
+    <select name="" id="">
+        <option value="" >安徽</option>
+        <option value="" selected="sleccted">浙江</option>
+        <option value="">上海</option>
+    </select>
+    
+</body>
+</html>

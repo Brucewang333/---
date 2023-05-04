@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: #ff8750;
+            /* margin: 20px; */
+        }
+        .one{
+            margin: 30px 30px;
+        }
+        .two{
+            /* margin-top: 20px; */
+            margin: 10px 20px 30px 20px; 
+            /* 复合写法与padding一致 */
+        }
+        .three{
+            width: 300px;
+            height: 200px;
+            background-color: skyblue;
+            /* margin: auto; */
+            text-align: center;
+            line-height: 200px;
+            margin: 0 auto;
+            /* 外边距可以让 块级盒子 水平居中 但是必须满足两个条件：
+            1、盒子必须制定了宽度
+            2、盒子左右的外边距都设置为auto */
+        }
+        
+        /* 行内元素或行内块元素水平居中给其父元素添加 text-align:center 即可 */
+        .four{
+            width: 200px;
+            height: 200px;
+            background-color: gray;
+            margin: 50px auto;
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="one">1</div>
+    <div class="two">2</div>
+    <div class="three">3</div>
+    <div class="four">
+        <span>span是行内元素</span>
+    </div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>清除浮动</title>
+    <style>
+        /* 为什么要清除浮动？
+            由于父级盒子很多情况下不方便给高度，但是盒子浮动不占有位置，最后父级盒子高度为0时
+            就会影响下面的标准流盒子
+        清除浮动语法
+            选择器{clear:属性值}
+        1、额外标签法：隔墙法，就是在最后一个浮动的子元素后面添加一个额外标签(必须块级)，添加清除浮动样式 
+        2、父级添加overflow,将其属性值设置为hidden、auto或scroll
+        3、:after伪元素法 是额外标签法的升级版 也是给父元素添加
+        4、双伪元素清除浮动
+        */
+
+        
+
+        /* 方法三 */
+        .clearfix:after {
+            content: "";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+
+         /* IE6、7专有 */
+        .clearfix {
+            *zoom: 1
+        }
+
+        .box {
+            /* 方法二 */
+            /* overflow: hidden; */
+            width: 666px;
+            background-color: #fff;
+            border: 1px solid black;
+        }
+
+        .one {
+            width: 333px;
+            height: 333px;
+            background-color: #ff888f;
+            float: left;
+        }
+
+        .two {
+            width: 333px;
+            height: 333px;
+            background-color: antiquewhite;
+            float: left;
+        }
+
+        .three {
+            height: 400px;
+            background-color: #ccc;
+        }
+        /* 方法一 */
+        /* .clear{
+            clear: both;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="box clearfix">
+        <div class="one">one</div>
+        <div class="two">two</div>
+        <div class="clear"></div>
+    </div>
+    <div class="three"></div>
+</body>
+
+</html>

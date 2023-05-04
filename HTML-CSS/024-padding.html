@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>内边距</title>
+    <style>
+        .father{
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+        }
+        .son{
+            width: 160px;
+            height: 170px;
+            background-color: gray;
+            padding: 20px 20px 10px;
+        }
+        /* 
+        1:padding是添加在父元素（盒子）上的
+        2:padding 调整子元素在父元素里面的位置关系
+        3:padding会把盒子撑大。
+        4：想让盒子保持原有的大小：在宽高的基础上减掉padding值。
+        5:给单一一个方向添加padding值： padding-top/bottom/left/right:
+        6:
+        padding简写：
+        padding:10px 四周
+        padding:10px 20px 上下 左右
+        padding:10px 20px 30px 上 左右 下
+        padding:10px 20px 30px 40px 上右下左
+        7：padding不会对背景图造成影响
+        8：padding的值不能为负值！！ */
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son">padding会改变盒子实际的大小 是的 没错</div>
+    </div>
+    
+</body>
+</html>

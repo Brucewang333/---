@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css背景</title>
+    <style>
+        /* background-image属性描述了元素的背景图像、
+        实际开发常见于logo或者一些装饰的小图片或者是超大的背景图片，
+        优点是非常便于控制位置(图灵也是一种运用场景)
+        background-image: none | url(url) 
+        
+        背景平铺
+        如果需要在HTML页面上对背景图像进行平铺，可以使用background-repeat属性
+        background-repeat: repeat | no-repeat | repeat-x | repeat-y
+
+        背景定位(background-position)
+        第一个数字表示 x 轴(水平)位置，第二个是 y 轴(垂直) 位置。只写一个一定是x轴
+        例 1: 默认值 
+        background-position: 0 0;  元素的左上角
+        例 2: 把图片向右移动 
+        background-position: 75px 0;
+        例 3: 把图片向左移动 
+        background-position: -75px 0;
+        例 4: 把图片向下移动 
+        background-position: 0 100px;
+
+        关键词是不用解释的。
+        x 轴上：
+        * left
+        * center
+        * right
+        y 轴上:
+        * top
+        * center
+        * bottom
+        顺序方面和使用像素值时的顺序几乎一样，首先是 x 轴，其次是 y 轴，像这样：
+        background-position: right top;
+                */
+
+        div {
+            width: 326px;
+            height: 60px;
+            font-weight: 700;
+            background-image: url(../images/RE1Mu3b.png);
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-size: 7.5em 1.5em;
+            line-height: 60px;
+            text-indent: 7.5em;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div>&nbsp; | &nbsp;Dynamics 365</div>
+
+</body>
+
+</html>
