@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+            forEach 遍历数组
+            被遍历的数组.forEach(function(当前数组元素,当前元素索引号){
+            // 函数体
+            })
+        */
+    // 参数包括当前元素和索引，索引可省略
+    // 该方法不返回数组。只起到遍历作用  map会返回一个数组
+    const arr = ['red', 'pink', 'yellow'];
+    arr.forEach(function(items,index){
+        console.log(items);
+        console.log(index);
+    })
+    </script>
+
+</body>
+
+</html>

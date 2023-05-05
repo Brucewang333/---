@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17-环境对象</title>
+</head>
+
+<body>
+    <button>点击</button>
+    <script>
+        // 每个函数里面都有this 环境对象  普通函数里面this指向的是window
+        // function fn() {
+        //     console.log(this)
+        // }
+        // window.fn()
+
+        const btn = document.querySelector('button')
+        btn.addEventListener('click', function () {
+            // console.log(this) // btn 对象
+            // btn.style.color = 'red'
+            this.style.color = 'red'
+        })
+
+        // 环境对象
+        // 目标：能够分析判断函数运行在不同环境中this所指代的对象
+        // 环境对象：指的函数内部特殊的变量this，它代表着当前函数运行时所处的环境
+        // 作用：弄清楚this的指向，可以让我们代码更简洁
+        //     函数的调用方式不同，this指代的对象也不同
+        //     【谁调用，this就是谁】是判断this指向的粗略规则
+        //     直接调用函数，其实相当于是window.函数，所以this指代window
+
+        // 总结：
+        // 1.环境变量this是什么？
+        //     它代表着当前函数运行时所处的环境
+        // 2. 判断this指向的粗略规则是什么？
+        //     【谁调用，this就是谁】
+
+        // 总结：
+        // 1.回调函数
+        //     把函数当做另外一个函数的参数传递，这个函数就叫回调函数
+        //     回调函数本质还是函数，只不过把它当成参数使用
+        //     使用匿名函数做为回调函数比较常见
+    </script>
+</body>
+
+</html>

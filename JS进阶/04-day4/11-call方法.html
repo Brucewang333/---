@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+           call(this,arg1,arg2...)
+           call就是调用函数，不过多了个this参数，可以动态指定函数执行时的this是哪个。
+           后面arg1,arg2是函数的形参
+       */
+        function fn(x, y) {
+            console.log(this); // window
+            console.log(x + y);
+        }
+        // 调用函数
+        // 改变 this 指向
+        const obj = {
+            uname: 'Bob'
+        }
+        fn.call(obj, 1, 2)
+    </script>
+</body>
+
+</html>

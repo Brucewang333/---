@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05-修改对象内容</title>
+</head>
+
+<body>
+    <div class="box">我是文字的内容</div>
+    <script>
+        // const obj = {
+        //     name: 'pink老师'
+        // }
+        // console.log(obj.name)
+        // obj.name = 'red老师'
+
+        // 1. 获取元素
+        const box = document.querySelector('.box')
+        // 2. 修改文字内容  对象.innerText 属性
+        // console.log(box.innerText) // 获取文字内容
+        // // box.innerText = '我是一个盒子' // 修改文字内容
+        // box.innerText = '<strong>我是一个盒子</strong>' // 不解析标签
+
+        // 3. innerHTML 解析标签
+        console.log(box.innerHTML)
+        // box.innerHTML = '我要更换'
+        box.innerHTML = '<strong>我要更换</strong>'
+    </script>
+
+    <h3>元素.innerText</h3>
+    <ul>
+        <li>将文本内容添加/更新到任意标签位置</li>
+        <li>显示纯文本，不解析标签</li>
+    </ul>
+    <h3>元素.innerHTML 属性</h3>
+    <ul>
+        <li>将文本内容添加/更新到任意标签位置</li>
+        <li>会解析标签，多标签建议使用模板字符</li>
+    </ul>
+    <h2>总结</h2>
+    <h3>1.设置/修改DOM元素内容有哪2种方式？</h3>
+    <ul>
+        <li>元素.innerText 属性</li>
+        <li>元素.innerHTML 属性</li>
+    </ul>
+    <h3>2.两者的区别是什么？</h3>
+    <ul>
+        <li>元素.innerText 属性，只识别文本，不能解析标签</li>
+        <li><span style="color: red;">元素.innerHTML 属性，识别文本，能够解析标签</span></li>
+        <li><span style="color: red;">如果还在纠结到底用谁，你可以选择 innerHTML</span></li>
+    </ul>
+</body>
+
+</html>

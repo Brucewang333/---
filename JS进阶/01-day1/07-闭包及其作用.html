@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+            闭包: 作用域scope里的closure
+            形式: 内部函数+外部函数变量的绑定
+            作用: 外部也能访问函数内部的变量。
+            
+            怎么做呢： 一般是函数内部再返回一个内部函数。该函数返回内部函数外函数内的值。
+            内部调用/返回内部函数，外部调用外部函数。
+        */
+
+        // 形式 1
+        function outerr() {
+            const a = 10;
+            function innerr() {
+                return a;
+            }
+
+            return innerr();
+        }
+        // 返回调用inner()的结果
+        console.log(outerr());  // 10
+        console.log('----------------');
+
+        // 形式 2
+        function outer() {
+            const b = 20;
+            function inner() {
+                return b;
+            }
+            return inner;
+        }
+        // 返回内部函数，要自己再调用一次。
+        const func = outer();
+        console.log(func); // ƒ inner() {return b;}
+        console.log(func()); // 20
+
+    </script>
+</body>
+
+</html>

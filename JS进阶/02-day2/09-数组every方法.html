@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+          every() 方法
+          测试一个数组内的所有元素是否都能通过某个指定函数的测试。
+          它返回一个布尔值。
+          arr.every(callback(element[, index[, array]])[, thisArg])
+      如果回调函数的每一次返回都为 truthy 值，返回 true，否则返回 false。
+      */
+        const arr = [1, 30, 39, 29, 10, 13];
+        const flag = arr.every(item => item >= 1)
+        console.log(flag);
+        const flag1 = arr.some(item => item >= 35)
+        console.log(flag1);
+
+    </script>
+</body>
+
+</html>

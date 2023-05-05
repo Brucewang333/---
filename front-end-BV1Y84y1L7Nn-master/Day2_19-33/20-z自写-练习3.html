@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20-z自写-练习3</title>
+</head>
+
+<body>
+    <script>
+        // 3. 页面依次打印 100-200 之间，可以被 6 整除的数字
+        let i = 100
+        let str = ''
+        while (i <= 200) {
+            if (i % 6 === 0) {
+                str += i + ', '
+            }
+            i++
+        }
+        document.write(str)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // 1. 全局this
+        console.log(this);  // window
+
+        // 2. 函数this -- 指向被调用者
+        function fn() {
+            console.log(this);
+        }
+        fn()                //window 本质是window.fn()
+
+
+        // 3. 对象函数this -- 对象本身
+        const obj1 = {
+            sayHi: function () {
+                console.log(this);
+            }
+        }
+        obj1.sayHi();
+
+
+        // 4. 箭头函数this
+        const fun = () => {
+            console.log(this); // window
+        }
+        fun()
+        // 5. 对象方法箭头函数this -- 自己的函数作用域没有this,沿用上一级作用域obj{}的this
+        const obj2 = {
+            uname: 'Bruce',
+            sayHi: () => {
+                console.log(this);
+            }
+        }
+        obj2.sayHi(); // window
+
+        const obj3 = {
+            uname: 'Bob',
+            sayHi: function () {
+                console.log(this);
+                let i = 10
+                const count = () => {
+                    console.log(this); // obj3
+                }
+                count()
+            }
+        }
+        obj3.sayHi()
+    </script>
+</body>
+
+</html>

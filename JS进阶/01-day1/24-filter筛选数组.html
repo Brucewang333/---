@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+           筛选数组的方法
+           arr.filter
+           return一个布尔表达式，将符合条件的元素追加到新数组里面。
+       */
+        const arr = [10, 20, 30];
+        const newArr = arr.filter(function(items,index){
+            // console.log(items);
+            // console.log(index);
+            return items >= 20
+        })
+        console.log(newArr);
+
+          // 箭头函数简化写法
+          const arr1 = [10, 20, 30];
+          const newArr1 = arr1.filter(items => items >= 20)
+          console.log(newArr1);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20-z自写-练习9</title>
+</head>
+
+<body>
+    <script>
+        // 综合案例变形
+        // 需求：根据用户选择计算两个数的结果：
+        // 题目描述：
+        // 打开页面出现的一个提示框，注意是一直提示的，请您选择+-*/，如果输入q，则是退出结束程序。
+        // 如果输入的是+-*/ 其中的任何一个，比如用户输入是+，则计算求和，如果用户输入的是*，则计算乘积
+        //     则提示第一个弹窗，提示用户：“请您输入第一个数字”
+        //     输入完毕则继续提示第二个弹窗，提示用户：“请您输入第二个数字”
+        //     都输入完毕，则通过警示框 alert 输出结果
+        //     如果输入是q，则结束程序
+        // 提示：多分支请使用if多分支来完成
+        // 具体效果如下图：
+        // 此网页显示
+        // 1.输入 + - * / 计算两个数字的结果
+        // 2.如果输入q，则是退出
+        // 输入框
+        //                         确定取消
+
+        while (true) {
+            let re = prompt(`
+            1.输入 + - * / 计算两个数字的结果
+            2.如果输入q，则是退出`)
+            if (re === 'q') {
+                break
+            } else if (re === '+') {
+                let num1 = +prompt('请您输入第一个数字')
+                let num2 = +prompt('请您输入第二个数字')
+                let temp = num1 + num2
+                alert(`两数之和，结果是${temp}`)
+            }
+            else if (re === '-') {
+                let num1 = +prompt('请您输入第一个数字')
+                let num2 = +prompt('请您输入第二个数字')
+                let temp = num1 - num2
+                alert(`两数之差，结果是${temp}`)
+            }
+            else if (re === '*') {
+                let num1 = +prompt('请您输入第一个数字')
+                let num2 = +prompt('请您输入第二个数字')
+                let temp = num1 * num2
+                alert(`两数乘积，结果是${temp}`)
+            }
+            else if (re === '/') {
+                let num1 = +prompt('请您输入第一个数字')
+                let num2 = +prompt('请您输入第二个数字')
+                let temp = num1 / num2
+                alert(`两数相除，结果是${temp}`)
+            }
+        }
+    </script>
+</body>
+
+</html>

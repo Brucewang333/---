@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 500px;
+            height: 500px;
+            background-color: #ccc;
+            color: #fff;
+            text-align: center;
+            font-size: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <script>
+        // 利用防抖实现性能优化
+        // 需求：鼠标在盒子上移动 里面的数字会 +1
+        const box = document.querySelector('.box')
+        let i = 1  // 让这个变量++
+        // 鼠标移动函数
+        function mouseMove() {
+            box.innerHTML = ++i
+            // 如果里面存在大量消耗性能的代码 比如dom操作 数据处理 可能造成卡顿
+        }
+        // 节流函数 throttle 使用节流函数来控制mousemove
+        function throttle(fn, t) {
+            let timer = null
+            return function () {
+                if (!timer) {
+                    timer = setTimeout(function () {
+                        fn()
+                        // 清除定时器
+                        timer = null
+                    }, t)
+                }
+            }
+
+        }
+        box.addEventListener('mousemove', throttle(mouseMove, 500))
+    </script>
+</body>
+
+</html>

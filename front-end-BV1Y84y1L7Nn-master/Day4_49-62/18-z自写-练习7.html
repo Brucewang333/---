@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>18-z自写-练习7</title>
+</head>
+
+<body>
+    <script>
+        // 需求：封装 findeIndex 函数返回查找元素在数组中的索引号。
+        //     要传递2个参数  元素、数组
+        //     如果找到，则返回查找元素在数组中的索引号，如果找不到，则返回-1
+        // 例如：检测 香蕉 数组['苹果','香蕉','橘子','荔枝','梨子']中，返回结果是1
+        function findeIndex(ele, arr = []) {
+            let index = -1
+            for (let i = 0; i < arr.length; i++) {
+                if (ele === arr[i]) {
+                    index = i
+                    break
+                }
+            }
+            return index
+        }
+        let arrT = ['苹果', '香蕉', '橘子', '荔枝', '梨子']
+        let reT = findeIndex('香蕉', arrT)
+        document.write(reT)
+        document.write('<br />')
+
+        let arrF = ['苹果', '橘子', '荔枝', '梨子']
+        let reF = findeIndex('香蕉', arrF)
+        document.write(reF)
+    </script>
+</body>
+
+</html>

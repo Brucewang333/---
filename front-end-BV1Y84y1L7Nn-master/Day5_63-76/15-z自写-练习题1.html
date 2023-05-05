@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15-z自写-练习题1</title>
+</head>
+
+<body>
+    <script>
+        // 点名：每次刷新网页运行，在控制台 随机输出一位同学的名字['老赵','老李','小传','小黑']，如果输出了，则数组中删除这个名字
+        let arr = ['老赵', '老李', '小传', '小黑']
+        let random = Math.floor(Math.random() * arr.length)
+        console.log(arr[random])
+        arr.splice(random, 1)
+        console.log(arr)
+    </script>
+</body>
+
+</html>

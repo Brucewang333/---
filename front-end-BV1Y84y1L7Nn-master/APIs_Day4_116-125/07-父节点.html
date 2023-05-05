@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07-父节点</title>
+</head>
+
+<body>
+    <div class="yeye">
+        <div class="dad">
+            <div class="baby">x</div>
+        </div>
+    </div>
+
+    <script>
+        const baby = document.querySelector('.baby')
+        console.log(baby) // 返回DOM对象
+        console.log(baby.parentNode)
+        console.log(baby.parentNode.parentNode)
+
+
+        // 1. 什么是DOM节点？
+        //     DOM树里每一个内容都称之为节点
+        // 2. DOM节点的分类？
+        //     元素节点 比如 div标签
+        //     属性节点 比如 class属性
+        //     文本节点 比如 标签里面的文字
+        // 3. 我们重点记住哪个节点？
+        //     元素节点
+        //     可以更好的让我们理清标签元素之间的关系
+    </script>
+</body>
+
+</html>

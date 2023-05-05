@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07-自动跳转到移动端</title>
+    <script>
+        // 检测userAgent（浏览器信息）
+        !(function () {
+            const userAgent = navigator.userAgent
+            // 验证是否为Android或iPhone
+            const android = userAgent.match(/(Android);?[\s\/]+([\d.]+)?/)
+            const iphone = userAgent.match(/(iPhone\sOS)\s([\d_]+)/)
+            // 如果是Android或iPhone，则跳转至移动站点
+            if (android || iphone) {
+                location.href = 'http://m.baidu.com'
+            }
+        })();
+        (function () { })();
+        !function () { }();
+        ~function () { }();
+        +function () { }();
+
+        // navigator的数据类型是对象，该对象下记录了浏览器自身的相关信息
+        // 通过userAgent检测浏览器的版本及平台
+        // PC端
+        // console.log(navigator.userAgent)
+        // 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 Edg/111.0.1661.41'
+        // iPhone端
+        // 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1 Edg/111.0.0.0'
+        // Android端
+        // 'Mozilla/5.0 (Linux; Android 8.0.0; SM-G955U Build/R16NW) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Mobile Safari/537.36 Edg/111.0.0.0'
+    </script>
+</head>
+
+<body>
+    这是PC端的页面
+</body>
+
+</html>

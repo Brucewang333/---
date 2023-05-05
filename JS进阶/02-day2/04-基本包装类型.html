@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const str1 = 'Apple'
+        console.log(str1.length);
+        const num = 12
+        console.log(num.toFixed(2))
+
+        /*
+           简单数据类型怎么有对象才有的属性和方法呢？
+           因为js在底层给简单数据类型做了层包装
+       */
+        const str = '123';
+       // 实际上是 const str = new String('123');
+        // Object String Number Boolean 都有专门的构造函数
+    </script>
+</body>
+
+</html>

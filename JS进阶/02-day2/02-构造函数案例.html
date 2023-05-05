@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+            构造函数
+            new创建新的空对象
+            this指向该新对象
+            接着根据函数内容创建实例成员
+            this.uname = name
+            相当于 xiaomi.name = name
+        */
+        function Phone(brand, price, country) {
+            //实例成员
+            this.brand = brand
+            this.price = price
+            this.country = country
+        }
+        // new关键字调用函数 实例化对象
+        const Apple = new Phone('apple', 8999, 'US')
+        const HuaWei = new Phone('HuaWei', 6999, 'CN')
+        const SamSung = new Phone('SamSung', 7999, 'Korea')
+        console.log(Apple);
+        console.log(HuaWei);
+        console.log(SamSung);
+
+        const date = new Date()
+        console.log(date);
+
+       
+    </script>
+</body>
+
+</html>

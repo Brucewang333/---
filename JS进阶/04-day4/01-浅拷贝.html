@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+         浅拷贝 : 拷贝的是地址
+         就拷贝第一层，第二层的对象只拷贝一个地址。
+
+         拷贝对象: Object.assgin() / 展开运算符{...obj}      拷贝对象
+         拷贝数组: Array.prototype.concat() 或者 [...arr]   拷贝数组
+
+     */
+        const obj = {
+            name: 'andy',
+            age: 20,
+            family: {
+                father: 'andyfather',
+                number: 5
+            }
+        }
+        // 第一种方式 直接赋值，将整个obj对象的地址给o ,一改全改
+        const o = obj;
+        o.age = 21;
+        console.log(o);     // {name: 'andy', age: 21, family: {…}}
+        console.log(obj);   // {name: 'andy', age: 21, family: {…}}
+
+        // 第二种方式 委婉一点的赋值方式 属性值拷贝一份赋值给新对象，第二层对象family仍旧赋值地址值
+        // 也就是说，属性值在栈里再复制一份，family对象还是两个对象公用一份
+
+        // 采用assgin 里层一改全改
+        const obj2 = {
+            name: 'andy',
+            age: 20,
+            family: {
+                father: 'andyfather',
+                number: 5
+            }
+        }
+        const o2 = {}
+        Object.assign(o2, obj2);
+        o2.age = 21;
+        o2.family.number = 6
+        console.log(o2); // {name: 'andy', age: 21, family: {…}} family: {father: 'andyfather', number: 6}
+        console.log(obj2);  // {name: 'andy', age: 20, family: {…}} family: {father: 'andyfather', number: 6}
+
+        // 采用采用...展开运算符 简单属性各自改变，family一起变
+
+        const obj3 = {
+            name: 'andy',
+            age: 20,
+            family: {
+                father: 'andyfather',
+                number: 5
+            }
+        }
+        const o3 = { ...obj3 }
+        o3.age = 21;
+        o3.family.number = 6;
+        console.log(obj3);  // {name: 'andy', age: 20, family: {…}} family: {father: 'andyfather', number: 6}
+        console.log(o3);    // {name: 'andy', age: 21, family: {…}} family: {father: 'andyfather', number: 6}
+    </script>
+</body>
+
+</html>

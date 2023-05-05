@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 元字符
+
+        console.log(/ha/.test('ha'));
+        console.log(/ha/.test('haha'));
+        console.log(/ha/.test('hahahha'));
+        console.log('----------------------------');
+
+        // 1. 边界符
+        console.log(/^ha/.test('ha')); // true
+        console.log(/^ha/.test('haha')); // true
+        console.log(/^ha/.test('hahahha')); // true
+        console.log(/^哈$/.test('哈'))// true     精确匹配 只能出现一个
+        console.log(/^哈$/.test('哈哈')); // false
+        console.log(/^哈$/.test('哈哈哈')); // false
+        console.log('----------------------------');
+
+        // 2. 量词 * 类似 >=0次
+        console.log(/^ha$/.test('ha')); //true
+        console.log(/^ha*$/.test('h')) // true
+        console.log(/^ha*$/.test('ha')); //true
+        console.log(/^ha*$/.test('haha'));  //false  只能有一个h 
+        console.log(/^ha*$/.test('haawa')); //false  不能有其他字符 只能有一个h 其他的都是a
+        console.log('----------------------------');
+
+        // 量词 + 类似 >=1
+        console.log(/^ha$/.test('ha')); //true
+        console.log(/^ha+$/.test('h')) // false
+        console.log(/^ha+$/.test('ha')); // true
+        console.log(/^ha+$/.test('haha')); //false
+        console.log(/^ha+$/.test('haawa')); //false
+        console.log('----------------------------');
+
+        // 量词 ? 类似 0 || 1 
+        console.log(/^哈?$/.test('哈'));
+        console.log(/^哈?$/.test(''));
+        console.log(/^哈?$/.test('啊哈哈'));
+        console.log(/^哈?$/.test('哈啊哈'));
+        console.log(/^哈?$/.test('哈撒给'));
+        console.log('----------------------------');
+
+        // 量词 {n} 写几，就必须出现几次
+        console.log(/^哈{4}$/.test('哈哈哈')); //false
+        console.log(/^哈{4}$/.test('哈哈哈哈')); //true
+        console.log(/^哈{4}$/.test('哈哈哈哈哈')); //false
+        console.log(/^哈{4}$/.test('哈哈哈哈哈哈')); //false
+        console.log('----------------------------');
+
+        // 量词 {n,} >=n 次
+        console.log(/^哈{4,}$/.test('哈哈哈')); //false
+        console.log(/^哈{4,}$/.test('哈哈哈哈')); //true
+        console.log(/^哈{4,}$/.test('哈哈哈哈哈')); //true
+        console.log(/^哈{4,}$/.test('哈哈哈哈哈哈')); //true
+        console.log('----------------------------');
+
+        // 量词 {n,m} 逗号左右两侧千万不能有空格 >=n && <=m
+        console.log(/^哈{4,6}$/.test('哈哈哈')); // false
+        console.log(/^哈{4,6}$/.test('哈哈哈哈')); // true
+        console.log(/^哈{4,6}$/.test('哈哈哈哈哈')); // true
+        console.log(/^哈{4,6}$/.test('哈哈哈哈哈哈'));// true
+        console.log('----------------------------');
+
+        // 3. 字符类  [abc]  只选1个
+        console.log(/^[abc]$/.test('a'));// true
+        console.log(/^[abc]$/.test('b'));// true
+        console.log(/^[abc]$/.test('c'));// true
+        console.log(/^[abc]$/.test('aa'));// false
+        console.log(/^[abc]$/.test('ac'));// false
+        console.log(/^[abc]{2}$/.test('ac'));// true
+        console.log('----------------------------');
+
+        // 字符类  [a-z]  只选1个
+        console.log(/^[a-z]$/.test('a'));// true
+        console.log(/^[A-Z]$/.test('b'));// false
+        console.log(/^[A-Z]$/.test('C'));// true
+        console.log(/^[0-9]$/.test('2')); // true
+        console.log(/^[a-zA-Z0-9]$/.test('P')); // true
+        console.log(/^[a-zA-Z0-9]$/.test('p')); // true
+        console.log(/^[a-zA-Z0-9]$/.test('2')); // true
+        console.log(/^[a-zA-Z0-9]{3}$/.test('W3c')); // true
+        console.log('----------------------------');
+
+          // 总结：
+        // 1.什么是元字符以及它的好处是什么？
+        //     是一些具有特殊含义的字符，可以极大提高了灵活性和强大的匹配功能
+        //     比如英文26个英文字母，我们使用元字符 [a-z] 简写和灵活
+        
+        // 元字符：边界符、量词、字符类
+        
+        // 总结：
+        // 量词：
+        // + 表示重复至少1次
+        // ? 表示重复0次或1次
+        // * 表示重复0次或多次
+        // {n,m} 表示重复 n到m 次
+
+        // 总结：
+        // 1.字符类 .（点）代表什么意思？
+        //     匹配除换行符之外的任何单个字符
+        // 2.字符类 [] 有若干代表什么意思？
+        //     [abc] 匹配abc其中的任何单个字符
+        //     [a-z] 匹配26个小写英文字母其中的任何单个字符
+        //     [^a-z] 匹配除了26个小写英文字母之外的其他任何单个字符
+    </script>
+</body>
+
+</html>

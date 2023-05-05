@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>点一下试试</button>
+    <script>
+        /*
+        bind方法
+            function.bind(thisArg[, arg1[, arg2[, ...]]])
+            同前两者call,apply的区别: 不会调用函数，仍可以改变this值
+            bind() 方法创建一个新的函数，
+            在 bind() 被调用时，这个新函数的 this 被指定为 bind() 的第一个参数，而其余参数将作为新函数的参数，供调用时使用。
+            也就是说,bind返回一个新的this和新的形参的新函数，不返回原函数结果
+        */
+        const obj = {
+            uname: 'Bob'
+        }
+        function fn(x, y) {
+            console.log(this); // 
+            console.log(x);
+        }
+
+        const fun = fn.bind(obj, 1, 2)
+        fun()
+
+        // 需求： 有一个按钮 点击就回禁用 2秒钟后开启
+        const btn = document.querySelector('button')
+        btn.addEventListener('click', function () {
+            // 禁用按钮
+            this.disabled = true
+            // setTimeout(function () {
+            //     this.disabled = false // 这里的this指向调用者 window 所以无法开启
+            // }, 2000)
+
+            // setTimeout(() => {
+            //     this.disabled = false // this沿作用域指向上一级函数的this
+            // }, 2000)
+
+            window.setTimeout(function () {
+                this.disabled = false   // this指向window 但是可以通过 bind 修改 
+            }.bind(this), 2000);     // bind不调用函数 用 call 和 apply 会立即执行函数 导致延时器失效
+        })
+
+
+        /*
+           三者小结
+           相同点: 都可以改变this指向，都可以给函数传参
+
+           区别点: 
+           1. call,apply会调用函数,bind不会
+           2. call,bind传递单个形参，appy传递数组形式的形参
+           3. bind不会调用函数，常在函数后面直接加个bind改变this，很方便
+
+           应用场景:
+           call : 调用函数并传递参数
+           apply: 跟数组有关，Math.func.apply将数组作为形参传进去，调用数学方法
+           bind:   改变this指向
+       */
+    </script>
+</body>
+
+</html>

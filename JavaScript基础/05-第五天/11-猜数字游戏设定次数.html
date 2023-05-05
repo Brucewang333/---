@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1. 随机生成一个1~10的随机整数
+        function getRandom(N, M) {
+            return Math.floor(Math.random() * (M - N + 1)) + N
+        }
+        let random = getRandom(1, 10)
+        //2. 设定三次机会 三次没猜对就直接退出
+        let flag = true     //开关变量
+        for (let i = 1; i <= 3; i++) {
+            //3. 用户输入一个数
+            let num = +prompt('输入你要猜的整数（1~10）：')
+            //4.判断输出
+            if (num > random) {
+                alert('数字猜大了，继续猜')
+            } else if (num < random) {
+                alert('数字猜小了,继续猜')
+            } else {
+                flag = false
+                alert('恭喜你猜对了')
+                break
+            }
+        }
+        if (flag) {
+            alert('次数用完了')
+        }
+    </script>
+
+
+</body>
+
+</html>

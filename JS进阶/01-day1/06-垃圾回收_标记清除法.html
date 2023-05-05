@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+            标记清除法
+            从global根部开始一层层找引用，当找不到对象空间时，清除该对象空间。
+        */
+
+        /*
+            这是一个互相指向对方引用，无法被垃圾回收机制回收的函数。
+            执行完函数时，let o1,o2变量和保存的内存地址在栈空间都被回收。
+            而在堆空间，o1的a属性保存着o2地址，o2的a属性保存着o1地址,互相指向对方的内存空间。
+            所有用传统的引用计数法，这两个空间被指向的数目一直为1，是无法被回收的。
+            而用标记清除法，两个内存空间互相指向对方，没有外人指向他们，是独立的两个空间。
+            从根部global一层层引用往下找，找不到他们。
+            所有将这两个空间一起回收。
+        */
+        function fn() {
+            let o1 = {};
+            let o2 = {};
+            o1.a = o2;
+            o2.a = o1;
+            return '引用计数无法回收';
+        }
+        fn()
+    </script>
+</body>
+
+</html>

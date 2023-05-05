@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1. for循环输出1-100的数字
+        for (let i = 1; i <= 100; i++) {
+            document.write(`我是数字${i}<br/>`)
+        }
+
+        // 2. 求1-100间的偶数和
+        let sum = 0
+        for (let i = 1; i <= 100; i++) {
+            if (i % 2 == 0) {
+                sum += i
+            }
+        }
+        document.write(`1~100的偶数之和为${sum}<br/>`)
+
+        // 3. 页面打印5个小星星
+        for (let i = 1; i <= 5; i++) {
+            document.write('⭐')
+        }
+
+        // 4. 打印数组
+        let arr = ['刘德华', '刘晓强', '刘晓庆', '刘若英', '刘热巴', 'pink老师']
+        for (let i = 0; i <= arr.length - 1; i++) {
+            console.log(arr[i])
+        }
+        // 遍历数组：从第一个循环到最后一个
+        for (let i = 0; i < arr.length; i++) {
+            console.log(arr[i])
+        }
+
+        let arr1 = []
+        console.log(arr1)
+        console.log(arr1[0]) // undefined
+        console.log(arr1[1]) // undefined
+    </script>
+</body>
+
+</html>

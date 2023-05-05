@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15-z自写-练习题3</title>
+</head>
+
+<body>
+    <script>
+        // 调用对象的方法
+        // 目的：复习对象的使用
+        // 要求：
+        // 1.对象声明完毕后，调用对象中的吃饭的方法
+        // 2.提示：对象中的方法本质是函数，调用需要加()
+        // 3.方法也可以传递参数的
+
+        let per = {
+            gender: '男',
+            age: 27,
+            hobby: 'Play Video Games',
+            talk: function () {
+                console.log('说话')
+            },
+            eat: function (food = '空') {
+                console.log(`吃饭，吃的${food}，可香了`)
+            }
+        }
+
+        per.eat('香辣鸡腿堡')
+    </script>
+</body>
+
+</html>

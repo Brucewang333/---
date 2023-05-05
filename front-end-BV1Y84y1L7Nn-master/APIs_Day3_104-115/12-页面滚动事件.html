@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12-页面滚动事件</title>
+    <style>
+        body {
+            padding-top: 100px;
+            height: 3000px;
+        }
+
+        div {
+            display: none;
+            margin: 100px;
+            overflow: scroll;
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        我里面有很多很多的文字
+        我里面有很多很多的文字
+        我里面有很多很多的文字
+        我里面有很多很多的文字
+        我里面有很多很多的文字
+        我里面有很多很多的文字
+        我里面有很多很多的文字
+        我里面有很多很多的文字
+        我里面有很多很多的文字
+        我里面有很多很多的文字
+        我里面有很多很多的文字
+        我里面有很多很多的文字
+        我里面有很多很多的文字
+        我里面有很多很多的文字
+    </div>
+
+    <script>
+        const div = document.querySelector('div')
+        // 页面滚动事件
+        window.addEventListener('scroll', function () {
+            // console.log('我滚了')
+            // 我想知道页面到底滚动了多少像素，被卷去了多少 scrollTop
+            // 获取html元素写法
+            // document.documentElement
+            // console.log(document.documentElement.scrollTop)
+            const n = document.documentElement.scrollTop
+            if (n >= 100) {
+                div.style.display = 'block'
+            } else {
+                div.style.display = 'none'
+            }
+        })
+
+        // const div = document.querySelector('div')
+        // div.addEventListener('scroll', function () {
+        //     // console.log(111)
+        //     // scrollTop 被卷去的头部
+        //     console.log(div.scrollTop)
+        // })
+
+        // 页面滚动事件-获取位置
+        // scrollLeft和scrollTop（属性）
+        //     获取被卷去的大小
+        //     获取元素内容往左、往上滚出去看不到的距离
+        //     这两个值是可读写的
+        // 尽量在scroll事件里面获取被卷去的距离
+        
+        // document.body
+        // document.documentElement
+    </script>
+</body>
+
+</html>

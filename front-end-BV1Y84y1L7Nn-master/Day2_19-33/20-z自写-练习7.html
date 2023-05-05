@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20-z自写-练习7</title>
+</head>
+
+<body>
+    <script>
+        // 7. 输出星期练习（请使用switch分支语句书写程序）
+        // 题目描述：
+        // 请用户输入1个星期数，就将对应的英文的星期打印出来。
+        // 比如用户输入“星期一”，则页面可以打印 monday
+        // 英文自己查有道。比如：星期一是monday，星期二是tuesday，星期三是wednesday，星期四是thursday，星期五是friday，星期六是saturday，星期日是sunday
+        let re = prompt('请您输入星期几，如‘星期一’：')
+        switch (re) {
+            case '星期一':
+                document.write('monday')
+                break
+            case '星期二':
+                document.write('tuesday')
+                break
+            case '星期三':
+                document.write('wednesday')
+                break
+            case '星期四':
+                document.write('thursday')
+                break
+            case '星期五':
+                document.write('friday')
+                break
+            case '星期六':
+                document.write('saturday')
+                break
+            case '星期日':
+                document.write('sunday')
+                break
+            default:
+                document.write('输入有误！')
+        }
+    </script>
+</body>
+
+</html>

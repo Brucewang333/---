@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17-z自写-练习9</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 750px;
+            margin: 0 auto;
+            background-color: pink;
+        }
+
+        .box>div {
+            float: left;
+            width: 150px;
+            height: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // 核心练习题
+        // 需求：
+        // 根据用户输入的个数，页面可以渲染对应王者荣耀英雄的个数
+        // 效果如下：
+        // 此网页显示
+        // 请输入1~20个之间的英雄的个数：
+        // 5
+        //                   确定 取消
+
+        document.write(`<div class="box">`)
+
+        let re = +prompt('请输入1-16个之间的英雄个数：')
+
+        for (let i = 0; i < re; i++) {
+            document.write(`<div style="background-image: url(images/${i + 1}.png);"></div>`)
+
+        }
+
+        document.write('</div>')
+    </script>
+</body>
+
+</html>

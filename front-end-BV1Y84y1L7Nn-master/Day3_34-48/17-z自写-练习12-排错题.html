@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17-z自写-练习12-排错题</title>
+</head>
+
+<body>
+    <script>
+        // bug：找到下面代码死循环的原因，并修改为正确的代码
+        for (let i = 1; i <= 5; i++) {
+            for (let j = 1; j <= 5; i++) { // 错误：这里是 j++，不是 i++，不是考察同学眼力，而是很多同学不小心就写这个了，要小心
+                console.log('这是双重for循环')
+            }
+        }
+        // 客观题：
+        // PC端地址：https://ks.wjx.top/vm/eeLxrmN.aspx#
+    </script>
+</body>
+
+</html>

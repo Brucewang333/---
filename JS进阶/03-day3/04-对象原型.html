@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+           对象原型: 实例化对象里的__proto__ (两个_) (是JS的非标准属性) 与 [[Prototype]]相同
+           指向原型对象 ，即构造函数的prototype
+           __proto__里面也有constructor属性,指向构造函数
+       */
+        function Star() { }
+        const ljj = new Star()
+        console.log(ljj.__proto__);
+        console.log(ljj.__proto__ === Star.prototype);
+        console.log(ljj.__proto__.constructor);
+        console.log(ljj.__proto__.constructor === Star);
+        console.log(ljj.__proto__.constructor === Star.prototype.constructor);
+
+
+        /*
+           有关原型的三者关系;
+           见原型关系图
+
+           总结:
+           1. prototype是什么?哪里来的?
+               原型(原型对象)
+               构造函数都自动有原型
+           2. constructor属性在哪里?作用干什么的？
+               prototype原型和与对象原型__proto__里面都有。
+               都指向创建实例对象/原型的构造函数
+           3. __proto__属性在哪里?指向谁?
+               在实例对象里面
+               指向原型prototype
+       */
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+          find使用方法
+          arr.find(callback[, thisArg])
+          callback包含三个参数:
+          element: 当前遍历到的对象
+          index:   当前遍历到的索引
+          array:   数组本身
+
+      返回值:
+          数组中第一个满足所提供测试函数的元素的值，否则返回 undefined。
+          也就是说，find返回的是当前遍历到的整个元素
+
+      */
+        // const arr = ['red', 'blue', 'green']
+        // const result = arr.find(item => item === 'blue')
+        // console.log(result);
+
+        const arr = [{
+            name: '张三',
+            salary: 10000
+        }, {
+            name: '李四',
+            salary: 10000
+        }, {
+            name: '王五',
+            salary: 20000
+        },]
+        const result = arr.find(items => items.name === '张三')
+        console.log(result);
+    </script>
+</body>
+
+</html>

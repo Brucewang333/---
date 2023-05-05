@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01-z自写-笔试题</title>
+</head>
+
+<body>
+    <script>
+        // 1. 声明age变量并赋值为18
+        //let age = 18
+
+
+        // 2. 声明uname，age，gender多个变量
+        // let uname, age, gender
+
+
+        // 3. 定义数组，保存 小黑、小红、小花 三个人的名字
+        // // 方法一：
+        // let arr = ['小黑', '小红', '小花']
+        // // 方法二：
+        // let arr = new Array('小黑', '小红', '小花')
+
+
+        // 4. 写出for循环遍历数组的基本语法
+        // let arr = [1, 2, 3, 4, 5]
+        // for (let i = 0; i < arr.length; i++) {
+        //     console.log(arr[i])
+        // }
+
+
+        // 5. 写出数字自增的做法有哪些
+        // let i = 0
+        // i++
+        // ++i
+        // i += 1
+        // i = i + 1
+
+
+        // 6. 写出if单分支、双分支、多分支语句
+        // // 单分支：
+        // if (true) {
+        // }
+        // // 双分支：
+        // if (true) {
+        // } else {
+        // }
+        // //多分支
+        // if (true) {
+        // } else if (true) {
+        // } else if (true) {
+        // } else {
+        // }
+
+
+        // 7. 请写出三元运算符的语法
+        // let x = 0
+        // let y = 1
+        // let re = x > y ? x : y
+        // console.log(re)
+
+
+        // 8. 请写出for循环的语法
+        // let arr = []
+        // for (let i = 0; i < arr.length; i++) {
+        // }
+
+
+        // 9. 请写出数组的常用方法和对应的作用
+        // let arr = [1, 2, 3, 4, 5]
+        // // 末尾追加
+        // arr.push(6)
+        // // 首位添加
+        // arr.unshift(0)
+        // console.log(arr)
+        // // 末尾删除
+        // let t1 = arr.pop()
+        // console.log(t1, arr)
+        // // 首位删除
+        // let t2 = arr.shift()
+        // console.log(t2, arr)
+        // // 指定位置删除
+        // let t3 = arr.splice(1, 2) // 起始位置，删除数量
+        // console.log(t3, arr)
+        // 排序
+        // let arrS = [1, 5, 29, 0, 19, 28]
+        // // 升序
+        // arrS.sort(function (a, b) {
+        //     return a - b
+        // })
+        // console.log(arrS)
+        // // 降序
+        // arrS.sort(function (a, b) {
+        //     return b - a
+        // })
+        // console.log(arrS)
+        // 10. 写出函数的语法
+        //       带有形参和返回值
+        // function f1() {
+
+        // }
+        // function f1(x) {
+        //     return x
+        // }
+
+
+        // 11. 写出作用域有哪些
+        // 全局作用域：外部or整个script包含的（函数内部，没有声明直接赋值）
+        // 局部作用域：函数内部的
+
+
+        // 12. 写出对象的语法
+        // let obj = { uname: 'clearStar', age: 27, gender: '男' }
+
+
+        // 13. 写出遍历对象的语法
+        let obj = { uname: 'clearStar', age: 27, gender: '男' }
+        for (v in obj) {
+            console.log(v, obj[v])
+        }
+
+
+        // 14. 写出基本数据类型有哪5种
+        // 基本类型：Number，String，Boolean，Null，Undefined，Symbol
+        // 引用类型：Object，Array，Function
+
+        
+        // 15. 写出 转换为数值型常见方法
+        // let re1 = +'123'
+        // console.log(re1, typeof re1)
+        // let re2 = Number('123')
+        // console.log(re2, typeof re2)
+        // let re3 = parseInt('123')
+        // console.log(re3, typeof re3)
+        // let re4 = parseFloat('123.555')
+        // console.log(re4, typeof re4)
+        // let re5 = '123' / 1 // '123'-0 // '123'*1 // '123'/1
+        // console.log(re5, typeof re5)
+
+
+        // 16. 写出模板字符串使用方式
+        // let age = 18
+        // console.log(`我今年${age}岁了`)
+
+
+        // 17. 写出布尔类型的值为false的值有哪些
+        // // 0，''，null，undefined，NaN
+        // if (0) {
+        //     console.log('0 是true')
+        // } else {
+        //     console.log('0 是false')
+        // }
+        // if ('') {
+        //     console.log('\'\' 是true')
+        // } else {
+        //     console.log('\'\' 是false')
+        // }
+        // if (null) {
+        //     console.log('null 是true')
+        // } else {
+        //     console.log('null 是false')
+        // }
+        // if (undefined) {
+        //     console.log('undefined 是true')
+        // } else {
+        //     console.log('undefined 是false')
+        // }
+        // if (NaN) {
+        //     console.log('NaN 是true')
+        // } else {
+        //     console.log('NaN 是false')
+        // }
+        // // 运行结果是：
+        // // 0 是false
+        // // '' 是false
+        // // null 是false
+        // // undefined 是false
+        // // NaN 是false
+
+        
+        // 18. 写出 +加号的有哪些？
+        // let re1 = +'123' // 转换为数值型
+        // let re2 = 1 + 2 // 数学计算
+        // let re3 = 'h' + 1 // 字符串拼接
+        // console.log(re1, re2, re3)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+            js垃圾回收机制
+            全局变量一般不会回收。
+            局部变量的值，使用完就被自动回收掉
+            1.函数作用域 2.块作用域
+            每次{}执行完一遍里面的值就被回收一遍。
+            
+        */
+        // 每次{}内执行完一遍循环，则经历 创建const j分配其内存空间，使用j的内存空间，销毁j内存空间的过程。
+
+        for (let i = 0; i < 3; i++) {
+            const j = i;
+            console.log(j);
+        }
+        /*
+            什么是垃圾回收机制?
+                garbage collection (gc)
+                js中内存的分配回收都是自动进行的。内存在不使用的时候会被垃圾回收器自动回收。
+            什么是内存泄漏？
+                不再使用的内存，没有及时释放，叫做内存泄漏。
+            内存的声明周期是怎么样的？
+                内存分配、内存使用、内存回收。
+                全局变量一般不回收（除非关闭窗口);一般情况下局部变量的值，不用了就会别自动回收。
+        */
+    </script>
+</body>
+
+</html>

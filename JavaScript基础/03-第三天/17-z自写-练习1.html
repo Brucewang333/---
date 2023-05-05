@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17-z自写-练习1</title>
+</head>
+
+<body>
+    <script>
+        // 写一个程序，要求如下（★★）：
+        //     需求1：让用户输入五个有效年龄（0-100之间），放入数组中
+        //         必须输入五个有效年龄，如果是无效年龄，则不能放入数组中
+        //     需求2：打印出所有成年人的年龄（数组筛选）
+        //     需求3：打印出所有人总年龄（累加）
+        //     需求4：打印所有人的平均年龄（累加）
+        //     需求5：打印出最大年龄和最小年龄（最大值）
+
+        let ages = []
+        let adultAges = []
+        let totalAge = 0
+
+        for (let i = 0; i < 5; i++) {
+            let re = +prompt(`请输入第${i + 1}个有效年龄（0-100之间）：`)
+            // 有效年龄
+            if (re >= 1 && re <= 100) {
+                ages.push(re)
+                // 成年人
+                if (re >= 18) {
+                    adultAges.push(re)
+                }
+                // 所有人总年龄
+                totalAge += re
+            }
+        }
+        console.log(ages)
+        console.log(`成年人的年龄：${adultAges}`)
+        console.log(`所有人总年龄：${totalAge}`)
+        console.log(`所有人的平均年龄：${totalAge / ages.length}`)
+
+        // 最大年龄和最小年龄
+        let maxA = ages[0]
+        let minA = ages[0]
+        for (let j = 1; j < ages.length; j++) {
+            maxA = maxA < ages[j] ? maxA = ages[j] : maxA
+            minA = minA > ages[j] ? minA = ages[j] : minA
+        }
+        console.log(`最大年龄：${maxA}，最小年龄：${minA}`)
+    </script>
+</body>
+
+</html>

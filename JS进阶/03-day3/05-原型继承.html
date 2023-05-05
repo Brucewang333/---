@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+            原型继承
+            其实就是对象覆盖构造函数的prototype
+        */
+        const person = {
+            eyes: 2,
+            head: 1
+        }
+        function Male() {
+
+        };
+        function Female() {
+
+        };
+        /*
+          在这里,对象male的对象原型__proto__能访问prototype
+          但是需要重新赋值prototype的constructor
+      */
+
+        // Male 通过原型来继承 Person
+        Male.prototype = person
+        // 通过对象添加公共部分会使prototype的constructor被覆盖 需要重新赋值指回构造函数
+        Male.prototype.constructor = Male
+        Male.prototype.baby = function () {
+            console.log('生孩子');
+        }
+        const rose = new Male()
+        console.log(rose);
+
+        Female.prototype = person
+        Female.prototype.constructor = Female
+        const bb = new Female()
+        console.log(bb);
+
+        /*
+            二者原型指向同一个person，同一块内存空间
+            一个原型被修改，另一个跟着被修改,给male原型加了baby方法，female也有这个方法。
+            解决方法：
+               不使用固定的对象person，而是使用构造函数person，
+               用构造函数new person出来的对象赋值给prototype，能保证每个原型都不一样
+       */
+        function Person() {
+            this.eyes = 2;
+            this.head = 1;
+        }
+
+        Male.prototype = new Person()
+        Male.prototype.constructor = Male
+        Male.prototype.rap = () => console.log('我会rap');
+        const wbb = new Male()
+        console.log(wbb);
+
+        Female.prototype = new Person()
+        Female.prototype.constructor = Female
+        Female.prototype.lover = () => console.log('我的男朋友是wbb');
+        const lisa = new Female()
+        console.log(lisa);
+
+        /*
+          原型继承的流程总结:
+          构造函数继承构造函数
+          male/female 继承 person
+          为了使 male/female 各自构造函数的原型有相同的结构，但不是共享同一个对象。
+          使用new Person来创建这两个构造函数的原型对象。
+          记得用constructor指回各自的构造函数
+      */
+
+    </script>
+</body>
+
+</html>

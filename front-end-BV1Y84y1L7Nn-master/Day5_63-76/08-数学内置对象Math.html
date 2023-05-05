@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08-数学内置对象Math</title>
+</head>
+
+<body>
+    <script>
+        // 属性
+        console.log(Math.PI) // 3.141592653589793
+        // 方法
+        // ceil 天花板 向上取整
+        console.log(Math.ceil(1.1)) // 2
+        console.log(Math.ceil(1.5)) // 2
+        console.log(Math.ceil(1.9)) // 2
+        console.log('---------------------')
+        // floor 地板 向下取整
+        console.log(Math.floor(1.1)) // 1
+        console.log(Math.floor(1.5)) // 1
+        console.log(Math.floor(1.9)) // 1
+        console.log(Math.floor('12px')) // NaN
+        console.log('---------------------')
+        // 四舍五入 round
+        console.log(Math.round(1.1)) // 1
+        console.log(Math.round(1.49)) // 1
+        console.log(Math.round(1.5)) // 2
+        console.log(Math.round(1.9)) // 2
+        console.log(Math.round(-1.1)) // -1
+        console.log(Math.round(-1.5)) // -1 // [-0.1, -0.5] 取 -1
+        console.log(Math.round(-1.51)) // -2 // (-0.5, -0.9] 取 -2
+
+        // 取整函数 parseInt(1.2)  // 1
+        // 取整函数 parseInt('12px') // 12
+
+        console.log('---------------------')
+        console.log(Math.max(1, 2, 3, 4, 5)) // 5
+        console.log(Math.min(1, 2, 3, 4, 5)) // 1
+        console.log(Math.abs(-1)) // 1
+        console.log(Math.pow(4, 2)) // 求 4 的 2次方 // 16
+        console.log(Math.sqrt(16)) // 求 16 的平方根 // 4
+        // null 类似 let obj = {}
+        let obj = null
+
+
+        // Math对象包含的方法：
+        // random：生成0-1之间的随机数（包含0不包含1）
+        // ceil：向上取整
+        // floor：向下取整
+        // max：找最大数
+        // min：找最小值
+        // pow：幂运算
+        // abs：绝对值
+        // Math对象在线文档：  https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Math
+    </script>
+</body>
+
+</html>

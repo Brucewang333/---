@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>19-获取元素大小位置的另外方法</title>
+    <style>
+        body {
+            height: 2000px;
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+
+    <script>
+        const div = document.querySelector('div')
+        console.log(div.getBoundingClientRect())
+
+        // 获取位置
+        // element.getBoundingClientRect()
+        // 方法返回元素的大小及其相对于视口的位置
+
+        // 总结：
+        // 属性  作用  说明
+        // scrollLeft和scrollTop  被卷去的头部和左侧  配合页面滚动来用，可读写
+        // clientWidth和clientHeight  获得元素宽度和高度  不包含border，margin，滚动条，用于js获取元素大小，只读属性
+        // offsetWidth和offsetHeight  获得元素宽度和高度  包含border，padding，滚动条等，只读
+        // offsetLeft和offsetTop  获取元素距离自己定位父级元素的左、上距离  获取元素位置的时候使用，只读属性
+    </script>
+</body>
+
+</html>

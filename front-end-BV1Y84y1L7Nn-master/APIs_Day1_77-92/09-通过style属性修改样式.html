@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09-通过style属性修改样式</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <script>
+        // 1. 获取元素
+        const box = document.querySelector('.box')
+        // 2. 修改样式属性 对象.style.样式属性 = '值'  别忘了跟单位
+        box.style.width = '300px'
+        // 多组单词的采取  小驼峰命名法
+        box.style.backgroundColor = 'hotpink'
+        box.style.border = '2px solid blue'
+        box.style.borderTop = '2px solid red'
+
+        // 总结
+        // 1.设置/修改元素样式属性通过 style 属性引出来
+        // 2.如果需要修改一个div盒子的样式，比如padding-left，如何写？
+        //     element.style.paddingLeft='300px'
+        //     小驼峰命名法
+        // 3.因为我们是样式属性，一定别忘记，大部分数字后面都需要加单位
+        //     const box = document.querySelector('.box')
+        //     // 修改元素样式
+        //     box.style.width = '200px'
+        //     box.style.marginTop = '15px'
+        //     box.style.backgroundColor = 'pink'
+    </script>
+</body>
+
+</html>

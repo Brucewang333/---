@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15-z自写-练习题8-排错题1</title>
+</head>
+
+<body>
+    <!-- 排错题1 -->
+    <!-- bug：请你找到下面代码的2处BUG进行修改 -->
+    <script>
+        let obj = {
+            name: '张三',
+            age: 20,
+            sex: '男',
+            address: '中国人'
+        }
+        // 获取姓名
+        // console.log(obj.['name']) // 错误1：没有点
+        console.log(obj['name'])
+        // console.log(obj.name)
+
+        // 获取地址
+        // console.log(obj.addres) // 错误2：addres写错了，这是同学们最容易犯错误的地方，单词拼错
+        console.log(obj.address)
+
+    </script>
+</body>
+
+</html>

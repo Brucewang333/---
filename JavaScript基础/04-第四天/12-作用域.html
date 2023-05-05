@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12-作用域</title>
+</head>
+
+<body>
+    <script>
+        let num = 10 // 1. 全局变量
+        console.log(num)
+        function fn() {
+            console.log(num)
+        }
+
+        // 2. 局部变量
+        function fun() {
+            let str = 'pink'
+        }
+        console.log(str) // 报错
+
+        // 作用域
+        // 在 JavaScript 中，根据作用域的不同，变量可以分为：
+        // （1）全局变量：函数外部 let 的变量
+        //         全局变量在任何区域都可以访问和修改
+        // （2）局部变量：函数内部 let 的变量
+        //         局部变量只能在当前函数内部访问和修改
+
+        // 变量有一个坑，特殊情况：
+        // 如果函数内部，没有变量声明，直接赋值，也当 全局变量 看，但是强烈不推荐
+    </script>
+</body>
+
+</html>

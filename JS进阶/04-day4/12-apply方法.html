@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+       Function.prototype.apply()
+           apply(thisArg, argsArray)
+           apply方法功能跟call()一样，都是调用函数并指定this
+           区别在于:
+               call是一个个传形参
+               apply是传数组
+       */ function fn(x, y) {
+            console.log(this); // 
+            console.log(x);
+        }
+        // 调用函数
+        // 改变 this 指向
+        const obj = {
+            uname: 'Bob'
+        }
+        fn.apply(obj, [1, 2])
+
+        // 返回值 本身就是在调用函数 所以返回值就是函数的返回值
+
+        // 使用场景 ： 求数组的最大值
+        // const max = Math.max(1,23,3)
+        // console.log(max);
+
+        const arr = [1, 2, 3, 4, 5]
+        const max = Math.max.apply(null, arr) // this 可以指向null
+        const min = Math.min.apply(null, arr)
+        console.log(max, min);
+
+        console.log(Math.max(...arr));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./styles/index.css" />
+  <title>成绩案例静态模板</title>
+</head>
+
+<body>
+  <div id="app" class="score-case">
+    <div class="table">
+      <table>
+        <thead>
+          <tr>
+            <th>编号</th>
+            <th>科目</th>
+            <th>成绩</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- <tr>
+            <td>1</td>
+            <td>语文</td>
+            <td>46</td>
+            <td><a href="#">删除</a></td>
+          </tr> -->
+          <script>
+            // 核心数据
+            const data = [
+              { subject: '语文', score: 46 },
+              { subject: '数学', score: 80 },
+              { subject: '英语', score: 100 },
+            ]
+            let sum = 0
+            for (let i = 0; i < data.length; i++) {
+              document.write(`
+              <tr>
+                <td>${i + 1}</td>
+                <td>${data[i].subject}</td>
+                <td>${data[i].score}</td>
+                <td><a href="#">删除</a></td>
+              </tr>`)
+              sum += data[i].score
+            }
+          </script>
+        </tbody>
+        <tbody>
+          <tr>
+            <td colspan="5">
+              <span class="none">暂无数据</span>
+            </td>
+          </tr>
+        </tbody>
+
+        <tfoot>
+          <tr>
+            <td colspan="5">
+              <!-- <span>总分：246</span>
+              <span style="margin-left: 50px">平均分：79</span> -->
+              <script>
+                document.write(`<span>总分：${sum}</span>
+              <span style="margin-left: 50px">平均分：${sum / data.length}</span>`)
+              </script>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+
+  </div>
+
+
+
+</body>
+
+</html>

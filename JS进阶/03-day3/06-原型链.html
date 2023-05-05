@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+            原型链，跟作用域链一样一层一层的链接向上
+        */
+        function Star() {
+
+        }
+        const s = new Star();
+        console.log(s.__proto__ === Star.prototype); // true
+
+        /*
+            原型对象prototype，是个对象，里面也有对象原型__proto__，指向Object的prototype
+            s.__proto__ = Star.prototype 
+            Star.prototype. __proto__ = Object.prototype
+        */
+
+        console.log(s.__proto__.__proto__ === Object.prototype);    // true
+        console.log(Star.prototype.__proto__ === Object.prototype); // true
+
+        console.log(Object.prototype.__proto__); // null Object对象原型__proto__再往上指就是null
+        /*
+            总结: 具体结构见原型链.png
+            作用: 公共方法都存放在原型prototype上。
+            当前对象__proto找到当前构造函数原型prototype，看有没有该方法。
+            没有该方法则通过当前构造函数原型prototype.__proto__,找上一级的原型prototype，看他里面有没有方法。
+            通过prototype.__proto一直向上找原型，查看其中的公共方法。直到Object.prototype.__proto__为null为止。
+                
+        
+
+        */
+    </script>
+</body>
+
+</html>

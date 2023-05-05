@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{
+            display: inline-block;
+            padding:5px;
+            border: 1px solid #000;
+            margin: 2px;
+            box-shadow: 0px 0px 4px  pink inset;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        //99乘法表
+        for (let i = 1; i <= 9; i++) {
+            for (let j = 1; j <= i; j++) {
+                let sum = i*j
+                document.write(`<span>${j} * ${i}= ${sum}</span>`)
+            }
+            document.write('<br />')
+        }
+    </script>
+</body>
+</html>

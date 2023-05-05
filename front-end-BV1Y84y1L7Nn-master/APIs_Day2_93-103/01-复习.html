@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01-复习</title>
+</head>
+
+<body>
+    <ul>
+        <li class="item">1</li>
+        <li class="item">2</li>
+        <li class="item">3</li>
+    </ul>
+
+    <script>
+        const lis = document.querySelectorAll('.item')
+        // lis[0].classList.add('active')   
+        console.log(lis)
+        for (let i = 0; i < lis.length; i++) {
+            lis[i].style.color = 'red'
+        }
+
+        // 总结：
+        // 1.什么是时间监听
+        //     就是让程序检测是否有事件产生，一旦有事件触发，就立即调用一个函数做出响应，也称为注册事件
+        // 2.时间监听三要素是什么？
+        //     事件源（谁被触发了）
+        //     事件类型（用什么方式触发，点击还是鼠标经过等）
+        //     事件处理程序（要做什么事情）
+    </script>
+</body>
+
+</html>

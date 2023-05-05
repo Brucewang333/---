@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15-z自写-练习题8-排错题2</title>
+</head>
+
+<body>
+    <!-- 排错题2 -->
+    <!-- 请你找到下面代码的3处bug进行修改 -->
+    <script>
+        let obj = {
+            name: '张三',
+            age: 20,
+            sex: '男',
+            address: '中国人',
+            sing: function () {
+                console.log('我会唱歌')
+            }, // 错误3：这里少了一个逗号，这是同学们很容易落下的
+            sum: function (x, y) {
+                return x + y
+            }
+        }
+
+        console.log(obj.sing()) // 少了小括号，sing函数没有返回值，默认返回undefined
+        console.log(obj.sum(1, 2))// 少了小括号
+    </script>
+</body>
+
+</html>

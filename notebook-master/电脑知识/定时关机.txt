@@ -1,0 +1,3 @@
+Shutdown -s -t time(定时关机单位秒)
+shutdown -a(取消关机)
+Shutdown -s -t 100

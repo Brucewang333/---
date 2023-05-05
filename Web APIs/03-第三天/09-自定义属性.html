@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .active {
+            color: green;
+            list-style: none;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li data-id="1" class="active">哈哈哈哈哈哈哈哈哈</li>
+        <li data-id="2">哈哈哈哈哈哈哈哈哈</li>
+        <li data-id="3">哈哈哈哈哈哈哈哈哈</li>
+        <li data-id="4">哈哈哈哈哈哈哈哈哈</li>
+        <li data-id="5">哈哈哈哈哈哈哈哈哈</li>
+    </ul>
+    <script>
+        const ul = document.querySelector('ul')
+        const lis = document.querySelectorAll('li')
+        ul.addEventListener('click', function (e) {
+            console.dir(e.target)
+            const i = +e.target.dataset.id
+            // e.target.style.color = 'blue'
+            console.log(i)
+            document.querySelector('.active').classList.remove('active')
+            lis[i - 1].classList.add('active')
+        })
+
+    </script>
+
+
+    <div data-id="0"></div>
+
+    <script>
+        const div = document.querySelector('div')
+        // console.log(div.dataset)
+        console.log(div.dataset.id) // 0
+    </script>
+</body>
+
+</html>

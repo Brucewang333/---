@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>18-z自写-练习5</title>
+</head>
+
+<body>
+    <script>
+        // 目标：封装一个函数，可以求任意数组的和 或 平均值
+        // 要求：
+        // 函数可以传递2个参数，比如handleData(arr, true)  handleData 处理数据的意思
+        //     参数一：接受实参传递过来的数组
+        //     参数二：布尔类型，如果是 true 或者 不传递参数 是求和操作，如果传递过来的参数是false，则是求平均值
+        function handleData(arr = [], boolean = true) {
+            let sum = 0
+            for (let i = 0; i < arr.length; i++) {
+                sum += arr[i]
+            }
+            if (boolean) {
+                return sum
+            } else {
+                return sum / arr.length
+            }
+        }
+
+        document.write(handleData([1, 2, 3]))
+        document.write('<br />')
+        document.write(handleData([1, 2, 3], false))
+        document.write('<br />')
+        document.write(handleData([1, 2, 3], true))
+    </script>
+</body>
+
+</html>

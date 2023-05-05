@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 1. encodeURI() 编码    2. decodeURI() 解码 -->
+
+    <script>
+        let str = '黑马程序员'
+        let url = encodeURI(str)
+        console.log(url);   // %E9%BB%91%E9%A9%AC%E7%A8%8B%E5%BA%8F%E5%91%98
+
+        console.log('-----------------------------------');
+        // let str2 = decodeURI(url)
+        let str2 = decodeURI('%E9%BB%91%E9%A9%AC')  // 可以使用前六组编码进行解码
+        console.log(str2);
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11-页面加载事件</title>
+    <script>
+        //等待页面所有资源加载完毕 就回去执行回调函数
+        // window.addEventListener('load', function () {
+        //     const btn = document.querySelector('button')
+        //     btn.addEventListener('click', function () {
+        //         alert(11)
+        //     })
+        // })
+
+        // img.addEventListener('load', function () {
+        //     // 等待图片加载完毕，再去执行里面的代码
+        // })
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const btn = document.querySelector('button')
+            btn.addEventListener('click', function () {
+                alert(11)
+            })
+        })
+
+          // 1.页面加载事件有哪两个？如何添加？
+        //     load事件
+        //         监听整个页面资源给window加
+        //     DOMContentLoaded
+        //         给document加
+        //         无需等待样式表、图像等完全加载
+    </script>
+</head>
+
+<body>
+    <button>dianji</button>
+</body>
+
+</html>

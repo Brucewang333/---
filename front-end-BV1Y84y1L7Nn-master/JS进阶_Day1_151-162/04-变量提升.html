@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04-变量提升</title>
+</head>
+
+<body>
+    <script>
+        // 1. 把所有 var 声明的变量提升到 当前作用域的最前面
+        // 2. 只提升声明，不提升赋值
+        // var num
+        // console.log(num + '件'); // undefined件
+        // num = 10
+        // console.log(num) // 10
+
+        function fn() {
+            console.log(num)
+            var num = 10
+        }
+        fn()
+
+        // 总结：
+        // 1. 哪个关键词声明变量会有变量提升？
+        //     var
+        // 2. 变量提升是什么流程？
+        //     先把var变量提升到当前作用域最前面
+        //     只提升变量声明，不提升变量赋值
+        //     然后依次执行代码
+        // 我们不建议使用var声明变量
+    </script>
+</body>
+
+</html>

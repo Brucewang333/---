@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>hahhahah</div>
+    <script>
+        /*
+           对象转换为字符串
+           先用values获取值为数组形式
+           再用数组方法join,自定义分隔符将其拼接为字符串
+       */
+        const obj = { size: '40cm*40cm', color: 'black' }
+        // 1. 将所有属性的值获取过来
+        // const values = Object.values(obj)
+        // console.log(values);
+        // 2. 转换为字符串 join('/')
+        // const a = values.join('/')
+        // console.log(a);
+        document.querySelector('div').innerHTML = Object.values(obj).join('/')
+    </script>
+</body>
+
+</html>

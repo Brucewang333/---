@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 500px;
+            height: 500px;
+            background-color: #ccc;
+            color: #fff;
+            text-align: center;
+            font-size: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <script src="lodash.min.js"></script>
+    <script>
+        /*
+           节流和防抖
+           节流: 连续触发事件但是n秒内只执行一次函数
+           防抖: n秒内又触发了事件，则会重新计算函数执行时间
+       
+           节流和防抖的使用场景:
+               节流: 鼠标移动，页面尺寸发生变化，滚动条移动等
+               防抖: 搜索框输入，设定每次输入完毕n秒后发送请求，如果期间还有输入，则重新计算
+       
+       */
+        /*
+            使用Lodash封装好的函数实现节流防抖
+            _.throttle(func, [wait=0], [options=])  节流
+            _.debounce(func, [wait=0], [options=])  防抖
+        */
+        const box = document.querySelector('.box')
+        let i = 1
+        function Move() {
+            box.innerHTML = i++
+        }
+        // box.addEventListener('mousemove', _.debounce(Move, 500))
+        box.addEventListener('mousemove', _.throttle(Move, 500))
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+            变量提升：
+            只针对var声明的变量。
+            js将var变量声明提升至当前作用域最前面；
+            只提升声明，不提升赋值。
+
+            实际开发中先用let/const声明，再赋值。
+        */
+
+        /*
+            以下代码段实际等于
+            var a;
+            console.log(a);
+            a = 20;
+        */
+        console.log(a); // undefined
+        var a = 20;
+
+        /*
+            注意是提升当前作用域最前面
+            function fn() {
+                var b;
+                console.log(b); // undefined
+                b = 30;
+            }
+        */
+        function fn() {
+            console.log(b); // undefined
+            var b = 30;
+        }
+        fn();
+
+        /*
+            总结：
+            1. 哪个关键字声明变量会有提升？
+            var
+            2. 变量提升是什么流程？
+            先把var声明放到当前作用域最前面。
+            然后依次执行
+        我们不建议用var声明变量。
+        */
+    </script>
+</body>
+
+</html>

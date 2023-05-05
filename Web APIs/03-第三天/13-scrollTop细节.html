@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13-scrollTop细节</title>
+    <style>
+        body {
+            height: 3000px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        document.documentElement.scrollTop = 800
+        window.addEventListener('scroll', function () {
+            // 必须写到里面
+            const n = document.documentElement.scrollTop
+            // 得到是什么数据  数字型 不带单位
+            // console.log(n)
+        })
+
+        // 总结：
+        // 1.被卷去的头部或者左侧用哪个属性？是否可以读取和修改？
+        //     scrollTop / scrollLeft
+        //     可以读取，也可以修改（赋值）
+        // 2.检测页面滚动的头部距离（被卷去的头部）用哪个属性？
+        //     document.documentElement.scrollTop
+    </script>
+</body>
+
+</html>

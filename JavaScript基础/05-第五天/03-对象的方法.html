@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03-对象的方法</title>
+</head>
+
+<body>
+    <script>
+        let obj = {
+            uname: '刘德华',
+            // 方法
+            sing: function (x, y) {
+                // console.log('冰雨')
+                console.log(x + y)
+                // return x + y
+            },
+            dance: function () { }
+        }
+        // 方法调用  对象名.方法名
+        // obj.sing(1, 2)
+        console.log(obj.sing(1, 2)) // undefined  函数中没有声明返回值 函数调用结束返回undefined给调用者
+        result = obj.sing(2, 3)
+        document.write(result)
+
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+            js分为全局作用域和局部作用域
+            局部作用域：
+                1. 函数作用域
+                2. {}块作用域
+            var声明的变量不存在局部作用域一说,let、const存在。
+            不同块之间的作用域无法访问。
+            局部作用域在执行完后自动销毁
+             
+         */
+        for (let i = 0; i <= 3; i++) {
+            //块作用域
+            console.log(i);
+        }
+        // console.log(i);      // 报错
+
+        // 不同块作用域各自独立，互不影响
+        for (let i = 0; i < 3; i++) {
+
+        }
+        for (let i = 0; i < 3; i++) {
+
+        }
+
+        for (let i = 0; i < 3; i++) {
+            for (let i = 0; i < 3; i++) {
+                console.log(i);
+            }
+        }
+
+        if(true){
+            let i =10
+        }
+        console.log(i);
+    </script>
+</body>
+
+</html>

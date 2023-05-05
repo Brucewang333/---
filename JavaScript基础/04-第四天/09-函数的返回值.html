@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09-函数的返回值</title>
+</head>
+
+<body>
+    <script>
+        // 函数的返回值
+        // function fn() {
+        //     return 20
+        // }
+        // 相当于执行了 fn() 调用者    fn() = 20
+        // console.log()
+
+        // let num = prompt('请输入数字：')
+        // let re = fn()
+        // console.log(re)
+
+        // 求和函数的写法
+        function getTotalPrice(x, y) {
+            return x + y
+            // return 后面的代码不会被执行
+            // console.log(111)
+        }
+        // console.log(getTotalPrice(1, 2))
+        // console.log(getTotalPrice(1, 2))
+        let sum = getTotalPrice(1, 2)
+        console.log(sum)
+        console.log(sum)
+
+
+        function fn() {
+
+        }
+        let re = fn()
+        console.log(re)  // undefined
+    </script>
+</body>
+
+</html>

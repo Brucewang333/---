@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+       剩余参数...name
+       以Array真数组的形式接收所有剩余的实参。
+       */
+        function getSum(a, b, ...arr) {
+            console.log(arr);
+            console.log(Array.isArray(arr)); // true
+        }
+        getSum(1, 2, 3)
+        getSum(1, 2, 3, 4)
+        /*
+              总结:
+              主要作用：获取多余的实参。
+              与arguments比较：
+                  arguments是伪数组，...arr是真数组。
+                  平常更多用...arr，更加灵活，箭头函数没有arguments。  
+        */
+    </script>
+</body>
+
+</html>

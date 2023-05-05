@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+            什么是闭包？
+                闭包 = 内层函数 + 外层函数的变量
+            
+            闭包的作用？
+                封闭数据： 实现数据私有，外部也可以访问函数内部的变量
+                将函数与其他操作的某些数据关联起来。
+
+            闭包可能引起的问题？
+                内存泄漏： 该回收的数据因为闭包而一直无法被回收
+        */
+        // 闭包做累加器
+
+        function addCalc() {
+            let a = 0;
+            function fn() {
+                a++;
+                console.log('这是第' + a + '次');
+            }
+            return fn;
+        }
+        const temp = addCalc();
+        console.log('temp=' + temp);  // fn
+
+        temp();  // 这是第1次
+        temp();  // 这是第2次
+        temp();  // 这是第3次
+        /*
+            闭包会持有父方法的局部变量并且不会随父方法销毁而销毁，所有每次都能在原来的数值上叠加。
+
+            temp === addCalc() === fn
+            变量temp返回的是调用addCalc函数的返回值，也就是内部函数fn，每次调用temp()都只执行fn();
+            而不会每次都执行let a=0;
+            这样实现了 ：
+                数据私密: 外部改变不了计数器的 a 值。
+                累加操作
+        */
+
+
+        function addCalc2() {
+            let aa = 0;
+            function fn() {
+                aa++;
+                console.log('这是第' + aa + '次');
+            }
+            return fn();
+        }
+        /*
+            这是为什么?
+            复制给变量的话，fn和fn()都一样
+            自己调用的话，就要重新执行let aa = 0?
+            解答：
+            因为内存函数执行完释放掉，外层函数也释放了，所以每次调用都从头执行。
+            当将其赋给变量时，全局变量无法销毁释放，除非页面关闭。
+            那么该全局变量就会一直指向该外层函数的内存空间，从而在同一个空间进行累加操作而不会被释放。
+        */
+        var temp2 = addCalc();
+        console.log('temp2=' + temp2);
+        temp2();    // 这是第1次
+        temp2();    // 这是第2次
+        temp2();    // 这是第3次
+        // addCalc2(); // 这是第1次
+        // addCalc2(); // 这是第1次
+        // addCalc2(); // 这是第1次
+
+    </script>
+</body>
+
+</html>

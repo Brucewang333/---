@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const msg = {
+            "code": 200,
+            "msg": "获取新闻列表成功",
+            "data": [
+                {
+                    "id": 1,
+                    "title": "5G商用自己，三大运用商收入下降",
+                    "count": 58
+                },
+                {
+                    "id": 2,
+                    "title": "国际媒体头条速览",
+                    "count": 56
+                },
+                {
+                    "id": 3,
+                    "title": "乌克兰和俄罗斯持续冲突",
+                    "count": 1669
+                },
+
+            ]
+        }
+        // msg是一个对象+数组+对象
+        // 我们只需要data，那么在传参的时候就可以进行解构
+        // 正常模式
+        const { data } = msg;
+        function render(data) {
+            console.log(data);
+        }
+        render(data);
+
+        // 简化 传参+解构  
+        // 防止msg里的data 混淆函数形参里的data 将函数里的数据名改为myData
+        // function render({ data: myData }) {
+        //     console.log(myData);
+        // }
+        // render(msg)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>18-z自写-练习8</title>
+</head>
+
+<body>
+    <script>
+        // bug：请你找到代码返回NaN的原因，并进行修改
+        // 请返回一个数字型的结果，可以使用默认参数或者逻辑中断都可以
+        function fn(x, y) { // 错误：因为y没有参数传递过来，所以是undefined，相加的结果是NaN，可以给y设置默认参数
+            console.log(x + y)
+        }
+        fn(1) // NaN
+
+        // 方法一：默认参数
+        function fn1(x, y = 0) {
+            console.log(x + y)
+        }
+        fn1(1) // 1
+
+        // 方法二：逻辑中断
+        function fn2(x, y) {
+            y = y || 0
+            console.log(x + y)
+        }
+        fn2(1) // 1
+    </script>
+</body>
+
+</html>

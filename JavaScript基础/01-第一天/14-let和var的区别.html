@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12-let和var的区别</title>
+</head>
+
+<body>
+    <script>
+        /* console.log(num) // undefined
+        var num = 10 */
+
+        /* var num
+        console.log(num)
+        num = 10 */
+
+        /* num = 10
+        console.log(num)
+        var num */
+
+        /* var num = 10
+        var num = 20
+        console.log(num) // 20 */
+
+        // 报错
+        /* num = 10
+        console.log(num)
+        let num */
+
+       /*  let num = 20
+        let num = 10
+        console.log(num) */
+    </script>
+</body>
+
+</html>
+
+<!-- var声明：
+可以先使用，再声明（不合理）
+var声明过的变量可以重复声明（不合理）
+比如：变量提升、全局变量、没有块级作用域等等 -->
+
+<!-- 结论：var就是个bug，别迷恋它了，以后声明变量我们统一使用 let -->

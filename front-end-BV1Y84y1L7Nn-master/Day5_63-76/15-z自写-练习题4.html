@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15-z自写-练习题4</title>
+</head>
+
+<body>
+    <script>
+        // 猜数字游戏，设定次数，最多猜8次
+        function getRandom(N, M) {
+            return Math.floor(Math.random() * (M - N + 1)) + N
+        }
+        let random = getRandom(0, 20)
+        console.log(random)
+
+        let flag = true
+        for (let i = 1; i <= 8; i++) {
+            let num = +prompt(`第${i}次，请您输入您猜的数字（1~20范围内）：`)
+            if (num > random) {
+                alert('您猜大了')
+            } else if (num < random) {
+                alert('您猜小了')
+            } else {
+                flag = false
+                alert('恭喜你，猜对了')
+                break
+            }
+        }
+
+        if (flag) {
+            alert('8次都没中')
+        }
+    </script>
+</body>
+
+</html>

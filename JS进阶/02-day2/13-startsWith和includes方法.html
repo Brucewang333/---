@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+          startsWith() 方法
+          用来判断当前字符串是否以另外一个给定的子字符串开头，并根据判断结果返回 true 或 false。
+
+          判断开头的
+          str.startsWith(searchString[, position]) 
+          position 可选 在 str 中搜索 searchString 的开始位置，默认值为 0。
+          第二个参数可以设定从哪个位置来判断。
+      */
+        const str = 'Love nothing but U'
+        console.log(str.startsWith('U')); //false
+        console.log(str.startsWith('U', 17)); //true
+
+
+        /*
+          includes() 方法
+          用于判断一个字符串是否包含在另一个字符串中，根据情况返回 true 或 false。
+
+          判断是否包含子串
+          区分大小写！可以设定查找位置。
+          str.includes(searchString[, position])
+      */
+        const str1 = 'I Love Nothing But U'
+        console.log(str1.includes('U', 2)); // true
+        console.log(str1.includes('I', 2)); // false
+        console.log(str1.includes('l')); // false 区分大小写
+    </script>
+</body>
+
+</html>

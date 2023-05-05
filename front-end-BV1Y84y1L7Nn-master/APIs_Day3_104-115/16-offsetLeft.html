@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16-offsetLeft</title>
+    <style>
+        div {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin: 100px;
+        }
+
+        p {
+            width: 100px;
+            height: 100px;
+            background-color: purple;
+            margin: 50px
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p></p>
+    </div>
+
+    <script>
+        const div = document.querySelector('div')
+        const p = document.querySelector('p')
+        // console.log(div.offsetLeft)
+        // 检测盒子的位置  最近一级带有定位的祖先元素
+        console.log(p.offsetLeft)
+
+
+        // 元素尺寸位置
+        // 获取宽高：
+        //     获取元素的自身宽高、包含元素自身设置的宽高、padding、border
+        //     offsetWidth和offsetHeight
+        //     获取出来的是数值，方便计算
+        //     注意：获取的是可视宽高，如果盒子是隐藏的，获取的结果是0
+        // 获取位置：
+        //     获取元素距离自己定位父级元素的左、上距离
+        //     offsetLeft和offsetTop 注意是只读属性
+
+        // 总结：
+        // 1. offsetWidth和offsetHeight是得到元素什么的宽高？
+        //     内容+padding+border
+        // 2. offsetTop和offsetLeft得到位置以谁为准？
+        //     带有定位的父级
+        //     如果都没有则以 文档左上角 为准
+    </script>
+</body>
+
+</html>

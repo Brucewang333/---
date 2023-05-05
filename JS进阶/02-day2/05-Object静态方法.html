@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+            跟java一样。静态方法就是不在构造函数内的类公共方法，用类名直接调用
+
+            Object静态方法:
+            1. Object.keys(obj) 获取当前对象所有的属性名，返回数组形式
+            2. Object values(o) 获取当前对象所有的属性值，返回数组形式
+            3. Object.assign(target,obj)    对象的拷贝与合并
+
+        */
+       const o = {uname:'猪啊',age:18}
+       // 获取所有的属性名
+       console.log(Object.keys(o)); // 返回数组
+       // 获取所有的属性值
+       console.log(Object.values(o));
+
+       // 对象的拷贝
+        const oo = {}
+        Object.assign(oo,o)
+        console.log(oo);
+
+        // 添加属性
+        Object.assign(oo,{gender:'男'})
+        console.log(oo);
+    </script>
+</body>
+
+</html>

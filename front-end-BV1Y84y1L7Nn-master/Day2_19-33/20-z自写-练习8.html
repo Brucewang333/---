@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20-z自写-练习8</title>
+</head>
+
+<body>
+    <script>
+        // 8. 用户登录验证
+        // 题目描述：
+        // 接受用户输入的用户名和密码，若用户名为“admin”，且密码为“123456”，则提示用户登录成功！否则，让用户一直输入。
+        while (true) {
+            let uname = prompt('请输入用户名：')
+            let pwd = prompt('请输入密码：')
+            if (uname === 'admin' && pwd === '123456') {
+                alert('恭喜，登录成功！')
+                break
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+         实例对象、实例成员
+         实例对象: Apple,HuaWei
+         实例成员: 实例对象中的属性和方法 brand,price,country
+     */
+        function Phone(name) {
+            this.name = name
+        }
+        const Apple = new Phone('Apple')
+        const HuaWei = new Phone('HUAWEI')
+        Apple.name = '苹果'     // 实例属性
+        Apple.sayHi = () => console.log('Hi~ Siri');    //实例方法
+        console.log(Apple);
+        Apple.sayHi()
+        /*
+         静态成员
+         挂载在构造函数上，实例成员外的属性和方法
+   
+         1. 构造函数的属性和方法被称为静态成员
+         2. 一般公共特征的属性方法被设置为静态成员
+         3. 静态成员的this指向构造函数本身。
+        */
+        function Phone(name) {
+            this.name = name
+        }
+        Phone.weight = '210g'   //静态属性
+        Phone.call = () => console.log('打电话');   //静态方法
+        console.log(Phone.weight);
+        Phone.call()
+
+        /*   静态成员：构造函数的属性和方法  公共，所有实例对象共有
+            实例成员: 实例对象的属性和方法 专属当前实例对象 */
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+            展开运算符...arr
+            形式和剩余参数一样，不过能用于对象、数组等。
+            感觉就像是展开成单独一个数字序列，不再受数组的类型限制。
+        */
+
+        // 顾名思义，将数组内容展开
+        const a = [1, 2, 3]
+        console.log(...a); // 1 2 3
+
+        // 求最大值
+        console.log(Math.max(...a)); // 3
+        // ...a === 1,2,3
+        //  
+        const b = [4, 5, 6];
+        const ab = [...a, ...b]; //数组合并
+        console.log(ab); // [1, 2, 3, 4, 5, 6]
+    </script>
+</body>
+
+</html>

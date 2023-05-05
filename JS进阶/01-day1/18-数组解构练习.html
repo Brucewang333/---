@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //数组解构
+        let [hr, lx, mi, fz] = ['海尔', '联想', '小米', '方正']
+        console.log(hr, lx, mi, fz,);
+
+
+        //将最大值和最小值函数返回值解构 max 和 min两个变量
+        function getValue() {
+            return [100, 60]
+        }
+        const [max, min] = getValue()
+        console.log(max);
+        console.log(min);
+
+        //剩余参数 变量少 单元值多
+        const [a, b, ...c] = [1, 2, 3, 4, 5]
+        console.log(a); // 1
+        console.log(b); // 2
+        console.log(c); // [3,4,5]  真数组
+
+        // 防止 undefined 传递
+        const [i = 0, j = 0] = [1, 2]
+        const [m = 0, n = 0] = []
+        console.log(i);
+        console.log(j);
+        console.log(m);
+        console.log(n);
+
+        // 按需导入赋值
+        const [q, w, , r] = [3, 4, 5, 6]
+        console.log(q);
+        console.log(w);
+        console.log(r);
+
+        //多维数组的解构
+        const arr = [1,2,[3,4]]
+        console.log(arr[0]); // 1
+        console.log(arr[2]); // [3,4]
+        console.log(arr[2][0]); // 3
+
+        const [aa,bb,[cc,dd]] = [1,2,[3,4]]
+        console.log(aa); // 1
+        console.log(bb); // 2
+        console.log(cc); // 3
+        console.log(dd); // 4
+    </script>
+</body>
+
+</html>

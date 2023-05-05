@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const obj = {
+            uname: 'bb',
+            age: 23,
+            hobby: ['唱歌', '跳舞', 'rap'],
+            pc: {
+                brand: 'msi',
+                xk: 1060
+            }
+        }
+        const o = {}
+        // 拷贝函数
+        function deepCopy(newObj, oldObj) {
+            for (let k in oldObj) {
+                // 处理数组问题
+                if (oldObj[k] instanceof Array) {
+                    newObj[k] = []
+                    deepCopy(newObj[k], oldObj[k])
+                } else if (oldObj[k] instanceof Object) {
+                    newObj[k] = {}
+                    deepCopy(newObj[k], oldObj[k])
+                } else {
+                    newObj[k] = oldObj[k]
+                }
+            }
+        }
+        deepCopy(o, obj)
+        o.hobby[1] = '跳'
+        o.pc.xk = '3080'
+        console.log(o);
+        console.log(obj);
+    </script>
+</body>
+
+</html>

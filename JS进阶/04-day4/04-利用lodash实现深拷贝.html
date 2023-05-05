@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 先引用 -->
+    <script src="lodash.min.js"></script>
+    <script>
+        const obj = {
+            uname: 'bb',
+            age: 23,
+            hobby: ['唱歌', '跳舞', 'rap'],
+            pc: {
+                brand: 'msi',
+                xk: 1060
+            }
+        }
+        const o = _.cloneDeep(obj)
+        o.pc.xk = 'RTX3080'
+        console.log(o);
+        console.log(obj);
+    </script>
+</body>
+
+</html>

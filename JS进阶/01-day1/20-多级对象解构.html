@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            多级对象解构：
+            照着解构写就行  
+        */
+        const a = {
+            name: 'andy',
+            msg: {
+                m1: 'hello',
+                m2: 'world'
+            },
+            email: 'aaa'
+        }
+        const { name, msg: { m1, m2 }, email } = a;
+        console.log(name);
+        console.log(m1);
+        console.log(m2);
+        console.log(email);
+        // console.log(msg); // msg is not defined
+    </script>
+</body>
+</html>

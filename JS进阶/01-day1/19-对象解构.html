@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+            对象解构，必须是相同的属性名
+        */
+        const { uname, age } = { uname: 'andy', age: 20 }
+        console.log(uname); // andy
+        console.log(age);   // 20
+
+        /*
+            若作用域已存在相同名字的变量名，和当前属性名冲突,
+            可以通过 旧属性名:新属性名 改变属性名
+        */
+        const username = 'bruce'
+        // const { username, userage } = { username: 'bluce1', userage: 10 };
+        // 报错 Cannot redeclare block-scoped variable 'username'.
+        // 解决方案： 改名
+        const { username: name, userage } = { username: 'bruce', userage: 10 };
+        console.log(name);  // bruce
+        console.log(userage); // 10
+        // 注意，解构对象时，原变量名与属性名必须相同
+        // 若该变量名已被使用，则换名
+
+        // 数组对象的解构
+        // 任何形式的解构，只要仿造需仿造对象的格式写就行
+        const pig = [{
+            sex: '男',
+            color: 'pink'
+        }]
+        const [{ sex, color }] = pig
+        console.log(sex);
+        console.log(color);
+    </script>
+</body>
+
+</html>

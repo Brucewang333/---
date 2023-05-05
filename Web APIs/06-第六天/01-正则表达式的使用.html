@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01-正则表达式的使用</title>
+</head>
+
+<body>
+    <script>
+        const str = '我们在学习前端，希望学习前端能高薪就业'
+        // 正则表达式使用：
+        // 1. 定义规则
+        const rag = /Java/
+        console.log(rag.test(str));
+        const reg = /前端/
+        // 2. 是否匹配
+        // console.log(reg.test(str)) // true
+        // 3. exec()
+        console.log(reg.exec(str)) // 返回数组
+
+        // 总结：
+        // 1.正则表达式是什么？
+        //     用于匹配字符串中字符组合的模式
+        // 2.正则表达式有什么作用？
+        //     表单验证（匹配）
+        //     过滤敏感词（替换）
+        //     字符串中提取我们想要的部分（提取）
+
+        // 总结：
+        // 1.正则表达式检测查找test方法和exec方法有什么区别？
+        //     test方法：用于判断是否符合规则的字符串，返回的是布尔值，找到返回true，否则false
+        //     exec方法：用于检索（查找）符合规则的字符串，找到返回数组，否则为null
+    </script>
+</body>
+
+</html>

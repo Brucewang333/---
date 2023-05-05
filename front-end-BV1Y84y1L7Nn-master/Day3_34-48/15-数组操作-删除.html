@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15-数组操作-删除</title>
+</head>
+
+<body>
+    <script>
+        let arr = ['red', 'green', 'blue']
+        // console.log(arr.pop()) // blue
+        // 1. pop() 删除最后一个元素
+        // arr.pop()
+        // arr.pop()
+        // console.log(arr)
+
+        // 2. shift() 删除第一个元素
+        // arr.shift()
+        // console.log(arr)
+
+        // 数组.splice() 方法  删除指定元素
+        // 语法：
+        // arr.splice(start, deleteCount)
+        // arr.splice(起始位置, 删除几个元素)
+        // 解释：
+        // start 起始位置
+        //     指定修改的开始位置（从0计数）
+        // deleteCount：
+        //     表示要移除的数组元素的个数
+        //     可选的。如果省略则默认从指定的起始位置删除到最后
+
+        // 3. splice 删除指定元素 splice(起始位置-索引号, 删除几个)
+        arr.splice(1, 1)  // 是从索引号1的位置开始删，只删除1个  // 删除green 一个元素
+        //arr.splice(1) // 从green删除到最后
+        console.log(arr)
+    </script>
+</body>
+
+</html>

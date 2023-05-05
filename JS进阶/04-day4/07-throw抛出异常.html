@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+           1. throw抛出异常，程序自动终止
+           2. throw后面跟着的是错误信息
+           3. Error对象配合throw使用,能够设置更详细的错误信息
+       */
+        function fn(x, y) {
+            if (!x || !y) {
+                // throw '没有传递实参'
+                throw new Error('没有传递参数')
+
+            }
+            return x + y
+        }
+        console.log(fn());
+    </script>
+</body>
+
+</html>

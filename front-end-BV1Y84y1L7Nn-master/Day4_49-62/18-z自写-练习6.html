@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>18-z自写-练习6</title>
+</head>
+
+<body>
+    <script>
+        // 需求：封装 some 函数查看数组是否存在某个元素。
+        //     要传递2个参数  元素、数组
+        //     如果数组存在元素，则返回 true，如果没有存在元素就返回false
+        // 例如：检测 香蕉 是否存在于 数组['苹果','香蕉','橘子','荔枝','梨子']中，返回结果是 true
+        function some(ele, arr = []) {
+            let isExist = false
+            for (let i = 0; i < arr.length; i++) {
+                if (ele === arr[i]) {
+                    isExist = true
+                    break
+                }
+            }
+            return isExist
+        }
+        let arr = ['苹果', '香蕉', '橘子', '荔枝', '梨子']
+        let re = some('香蕉', arr)
+        document.write(re)
+
+        document.write('<br />')
+
+        let arr_1 = ['苹果', '橘子', '荔枝', '梨子']
+        let re_1 = some('香蕉', arr_1)
+        document.write(re_1)
+
+
+    </script>
+</body>
+
+</html>

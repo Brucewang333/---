@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const arr = ['red', 'blue', 'pink']
+        // 1. 数组map方法 遍历数组中的数据 处理数据并且 return返回一个数组
+        const newArry = arr.map(function (ele, index) {
+            // console.log(ele) // 数组元素
+            // console.log(index) // 索引号
+            return ele
+            // return ele+'涩'
+        })
+        console.log(newArry);   //['red', 'blue', 'pink']
+
+        // 2. 数组join方法  把数组转换为字符串
+        // 小括号为空，则逗号分隔
+        console.log(newArry.join());    //red,blue,pink
+        // 小括号是空字符串，则元素之间没有分隔符
+        console.log(newArry.join(''))    //redbluepink
+        console.log(newArry.join('|')); //red|blue|pink
+        console.log(typeof newArry.join());
+    </script>
+</body>
+
+</html>

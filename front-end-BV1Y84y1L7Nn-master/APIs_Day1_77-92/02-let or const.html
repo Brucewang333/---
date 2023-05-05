@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02-let or const</title>
+</head>
+
+<body>
+    <script>
+        // 复杂数据放在 堆 里面
+        //            栈               堆
+        // arr --> 0x112233 --> ['red', 'pink', 'blue']
+        const arr = ['red', 'pink']
+        // arr.push('blue')
+        // console.log(arr)
+
+        //            栈           堆
+        // arr --> 0x112244 --> [1,2,3]
+        // arr = [1, 2, 3] // 错误
+        // console.log(arr)
+
+        // 变量声明
+        // const 声明的值不能更改，而且const声明变量的时候需要里面进行初始化
+        // 但是对于引用数据类型，const声明的变量，里面存的不是 值，不是值，不是值，是 地址。
+
+        // 建议数组和对象使用const来声明
+    </script>
+</body>
+
+</html>

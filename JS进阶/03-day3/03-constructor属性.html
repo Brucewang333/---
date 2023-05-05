@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+            constructor属性
+            是构造函数的prototype原型里的一个属性，指向构造函数
+            
+            也就是  构造函数function->prototype->constructor
+                    constructor->构造函数function
+            父包含子，子指向父
+        */
+        function Star(name, age) {
+            this.name = name;
+            this.age = age;
+
+        }
+        const a = new Star('andy', 12);
+        console.log(a);
+        console.log(Star.prototype); // {constructor: ƒ}
+        console.log(Star.prototype.constructor); // ƒ Star(name, age) {} 
+        console.log(Star === Star.prototype.constructor); // true
+
+        // 第一种添加原型方法的方式，直接追加，不会覆盖原来prototype属性中的constructor
+        Star.prototype.sing = function () {
+            console.log('singing');
+        }
+        Star.prototype.dance = function () {
+            console.log('dancing');
+        }
+        console.log(Star.prototype) // {sing: ƒ, dance: ƒ, constructor: ƒ}
+        console.log(Star.prototype.constructor) // ƒ Star(name, age) {} 
+
+        // 第二种添加原型方法的方式，打包成对象添加，这样会覆盖原有的{constructor: ƒ}
+        // 可以看到之前prototype里面是{constructor: ƒ}，对象里面包了个constructor函数
+        // 需要手动添加 constructor:Star ,重新给它指回构造函数去
+        Star.prototype = {
+            constructor: Star,
+            rap: function () {
+                console.log('我会说唱');
+            },
+            basketball: function () {
+                console.log('我会篮球');
+            }
+        }
+        // console.log(Star.prototype);   // {rap: ƒ, basketball: ƒ} 
+        // console.log(Star.prototype.constructor);    // ƒ Object()
+        console.log(Star.prototype);   // {sing: ƒ, dance: ƒ, constructor: ƒ}
+        console.log(Star.prototype.constructor);    // ƒ Star(name, age) {......}
+    </script>
+</body>
+
+</html>

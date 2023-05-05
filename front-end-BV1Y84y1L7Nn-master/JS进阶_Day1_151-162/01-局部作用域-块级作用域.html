@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01-局部作用域-块级作用域</title>
+</head>
+
+<body>
+    <script>
+        function fn() {
+
+        }
+
+
+        // for (let i = 1; i <= 3; i++) {
+        //     // 块作用域
+        //     console.log(i)
+        // }
+        // console.log(i) // 报错 Uncaught ReferenceError: i is not defined
+
+
+        // 代码块内部声明的变量外部将【有可能】无法被访问。
+        // var
+        // for (var i = 1; i <= 3; i++) {
+        //     // 块作用域
+        //     console.log(i)
+        // }
+        // console.log(i) // 4
+
+
+        // 不同代码块之间的变量无法相互访问
+        // let
+        // for (let i = 1; i <= 3; i++) {
+        //     // 块作用域
+        //     console.log(i)
+        // }
+        // for (let i = 1; i <= 3; i++) {
+        //     // 块作用域
+        //     console.log(i)
+        // }
+
+
+        if (true) {
+            let i = 10
+        }
+        // console.log(i) // 报错
+
+
+        // 总结：
+        // 1. 局部作用域分为哪两种？
+        //     函数作用域 函数内部
+        //     块级作用域 { }
+        // 2. 局部作用域声明的变量外部能使用吗？
+        //     不能
+
+        // 总结：
+        // 1. 全局作用域有哪些？
+        //     <script>标签内部
+        //     .js文件
+        // 2. 全局作用域声明的变量其它作用域能使用吗？
+        //     相当能
+
+        // 总结：
+        // 1. 作用域链本质是什么？
+        //     作用域链本质上是底层的变量查找机制
+        // 2. 作用域查找的规则是什么？
+        //     会优先查找当前函数作用域中查找变量
+
+        // 总结：
+        // 1.标记清除法核心思路是什么？
+        //     从根部扫描对象，能查找到的就是使用的，查找不到的就要回收
+    </script>
+</body>
+
+</html>

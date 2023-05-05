@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>18-z自写-练习9</title>
+</head>
+
+<body>
+    <script>
+        // bug：请你找到下面代码的2处错误，并进行修改过来
+        // 任意数组求和案例
+        function getsumArr(arr) {
+            let sum = 0
+            for (let i = 0; i < arr.legnth; i++) { // 错误1：length 写错了，这是很多同学容易犯错误的地方
+                sum + arr[i] // 错误2：是 sum += arr[i]  很多同学不小心把=给丢了
+            }
+            return sum
+        }
+        console.log(getsumArr([10, 20, 30, 40])) // 0
+
+        // 改成 正确如下
+        function getSumArr(arr) {
+            let sum = 0
+            for (let i = 0; i < arr.length; i++) {
+                sum += arr[i]
+            }
+            return sum
+        }
+        console.log(getSumArr([10, 20, 30, 40])) // 100
+    </script>
+</body>
+
+</html>

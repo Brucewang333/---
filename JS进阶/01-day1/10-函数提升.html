@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+            函数提升
+            与变量提升类似，不过将变整个函数声明提升到最前面。
+            所以在任何地方都可以调用函数。
+        */
+        /*
+            以下代码段相当于：
+            function foo() {
+                console.log('函数声明前被调用');
+            } 
+            foo();
+        */
+        foo();
+        function foo() {
+            console.log('函数声明前被调用');
+        }
+
+        fun()   // 报错
+        var fun = function(){     //赋值操作 只会将 var fun提升到最前
+            console.log('函数表达式');
+        }
+        //函数表达式必须先声明 后调用
+    </script>
+</body>
+
+</html>

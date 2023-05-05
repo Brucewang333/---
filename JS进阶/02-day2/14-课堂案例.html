@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p class="name">
+    </p>
+    <script>
+        const obj = { added: '50g茶叶,清洗球' }
+        // 将对象解构 拿到对应属性名的属性值
+        const {added} = obj
+        console.log(typeof added);
+        // split将字符串拆分 并返回数组  map遍历数组 返回处理过的新数组 join将新数组转换为字符串
+        const obj1 = added.split(',').map(element => `<div class="tag">【赠品】${element}</div>`).join('')
+        document.querySelector('.name').innerHTML = obj1
+    </script>
+</body>
+
+</html>

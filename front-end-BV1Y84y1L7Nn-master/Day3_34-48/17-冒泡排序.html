@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17-冒泡排序</title>
+</head>
+
+<body>
+    <script>
+        // let arr = [5, 4, 3, 2, 1]
+
+        let arr = [2, 4, 3, 5, 1]
+        // for (let i = 0; i < arr.length - 1; i++) {
+        //     for (let j = 0; j < arr.length - i - 1; j++) {
+        //         // 开始交换，但是前提 第一个数大于第二个数才交换
+        //         if (arr[j] > arr[j + 1]) {
+        //             // 交换2个变量
+        //             let temp = arr[j]
+        //             arr[j] = arr[j + 1]
+        //             arr[j + 1] = temp
+        //         }
+        //     }
+        // }
+
+        // arr.sort() // 排序，由小到大（升序）
+        // sort 升序排列
+        // arr.sort(function (a, b) {
+        //     return a - b
+        // })
+
+        // sort 降序
+        arr.sort(function (a, b) {
+            return b - a
+        })
+        console.log(arr)
+
+        // let num1 = 10
+        // let num2 = 20
+        // let temp = num1
+        // num1 = num2
+        // num2 = temp
+
+        // 1. 一共需要的趟数，我们用外层for循环
+        //     5个数据我们一共需要走4趟
+        //     长度就是 数组长度 减去1 arr.length-1
+        // 2. 每一趟交换次数，我们用里层for循环
+        //     第一趟 交换 4 次
+        //     第二趟 交换 3 次
+        //     第三趟 交换 2 次
+        //     第四趟 交换 1 次
+        //     长度就是 数组长度 减去 次数
+        //     但是我们次数是从 0 次开始的，所以，最终 arr.length-i-1
+        // 3. 交换2个变量就好了
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 构造函数 公共的属性和方法 封装到 Star 构造函数里面了
+        function Star(name, age) {
+            this.name = name
+            this.age = age
+            this.sing = function () {
+                console.log('唱歌');
+            }
+        }
+        const ldh = new Star('刘德华', 23)
+        const zxy = new Star('张学友', 24)
+        console.log(ldh.sing === zxy.sing); //false
+        // 实例对象各自在内存开辟了空间，存放着各自的sing方法，浪费内存。
+
+        /*
+            原型与构造函数相关?
+            原型： 能够使用原型对象实现方法共享
+            构造函数里都有个prototype（原型）属性，该属性指向一个对象，叫做原型对象。
+            
+            这个对象用来挂载公共函数，这样每个实例对象对象调用该方法时，都用的这份函数。
+            而不用每次都新开辟空间存放函数，节约内存。
+
+            这样子在构造函数里，公共属性放在构造函数里，公共方法放在其原型上。
+
+            构造函数和原型对象的this都指向实例化的对象。
+        */
+        let that
+        function Star2(name, age) {
+            that = this
+            this.name = name
+            this.age = age
+        }
+        Star2.prototype.sing = function () {
+            that = this
+            console.log('唱歌');
+
+        }
+        const zjl = new Star2('周杰伦', 23)
+        console.log(that === zjl);  // true
+        const cyx = new Star2('陈奕迅', 24)
+        console.log(zjl.sing === cyx.sing)   //true
+        // 都挂载到原型属性上，这样所有实例化对象都共享同一空间的方法。
+
+        zjl.sing()  // 此时原型对象中的this指向调用者ldh
+        console.log(that === zjl);  // true
+        console.log(that === cyx);  // false
+
+
+        /*
+          总结: 
+          1. 原型是什么
+              一个对象，我们也称prototype为原型对象。
+          2. 原型的作用是什么？
+              共享方法
+              可以把那些不变的方法，直接定义在prototype对象上
+          3. 构造函数和原型里面的this指向谁？ 
+              实例化对象
+      */
+    </script>
+</body>
+
+</html>

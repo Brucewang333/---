@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猜数字练习</title>
+</head>
+
+<body>
+    <script>
+        // 随机生成 1~20 之间的数 最多猜八次
+        // 1. 定义随机函数 
+        function getRandom(N, M) {
+            console.log(Math.floor(Math.random()*(M - N + 1) )+N)
+            return Math.floor(Math.random()*(M - N + 1) )+N
+        }
+        let random = getRandom(1, 20)
+        let flag = true
+        for (let i = 0; i < 8; i++) {
+            let num = prompt('输入一个1~20之间的整数：')
+            if (num > random) {
+                alert('大了，继续猜')
+            } else if (num < random) {
+                alert('小了，继续猜')
+            } else {
+                alert('猜对了')
+                flag = false
+                break
+            }
+        }
+        if (flag) {
+            alert('次数用完了')
+        }
+
+    </script>
+</body>
+
+</html>

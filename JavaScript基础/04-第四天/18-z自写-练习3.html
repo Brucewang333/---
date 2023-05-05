@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>18-z自写-练习3</title>
+</head>
+
+<body>
+    <script>
+        // 目的：封装函数，复习函数的基本写法。
+        // 需求：实现两个数的值交换（函数版本）
+        // 分析：
+        // （1）函数名为changeNum()
+        // （2）调用函数时，changeNum(1,2)
+        // （3）经过函数内部处理后，输出 第一个值的结果是2，第二个值的结果是1
+        // （4）可以多调用两次
+        function changeNum(x, y) {
+            let temp = x
+            x = y
+            y = temp
+            console.log(`第一个值的结果是${x}，第二个值的结果是${y}`)
+        }
+        changeNum(1, 2)
+        changeNum('hello', 'world')
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let moneny = 1000
+        //开始循环
+        while (true) {
+            let option = +prompt(`
+            请选择你要办理的业务：
+            1、存钱
+            2、取钱
+            3、查看余额
+            4、退出
+            `)
+            //退出
+            if (option === 4) {
+                break
+            }
+            switch (option) {
+                case 1://存钱
+                    let save_count = +prompt('输入你要存的金额数字：')
+                    moneny += save_count
+                    alert(`成功存入${save_count}元`)
+                    break
+                case 2://取钱
+                    let take_count = +prompt('输入你要取出的金额数字：')
+                    if(take_count <= moneny){
+                        moneny -= take_count
+                        alert(`成功取出${take_count}元`)
+                    } else {
+                        alert('账户余额不足')
+                    }
+                    break
+                case 3://查看余额
+                   alert(`当前账户余额为${moneny}元`)
+                    break
+            }
+        }
+
+
+
+        // // 3. 准备一个总的金额
+        // let money = 100
+        // // 1. 开始循环
+        // while (true) {
+        //     let re = +prompt(`
+        //     请您选择操作：
+        //     1.存钱
+        //     2.取钱
+        //     3.查看余额
+        //     4.退出`)
+        //     // 2. 如果用户输入的 4 ，则退出循环，break
+        //     if (re === 4) {
+        //         break
+        //     }
+        //     // 4. 根据输入做操作
+        //     switch (re) {
+        //         case 1:
+        //             // 存钱
+        //             let cun = +prompt('请输入存款金额：')
+        //             // money = money + cun
+        //             money += cun
+        //             break
+        //         case 2:
+        //             // 存钱
+        //             let qu = +prompt('请输入取款金额：')
+        //             // money = money - qu
+        //             money -= qu
+        //             break
+        //         case 3:
+        //             // 查看金额
+        //             alert(`您的银行卡余额是${money}`)
+        //             break
+        //     }
+        // }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+           String常用方法
+
+           字符串转换为数组 string.split
+           数组转换为字符串 arr.join
+
+           字符串截取(求子串) substring(startIndex[,endIndex])
+           若只写开始索引，则默认截取到最后。
+           结尾索引的数值不会被截取。
+       */
+        const str = '芒果,牛奶'
+        const str1 = str.split(',')
+        console.log(str1);
+        const str2 = str1.join('-')
+        console.log(str2);
+
+        const str3 = '12345abcde';
+        const str4 = str3.substring(0,9)
+        const str5 = str3.substring(0)
+        console.log(str4);
+        console.log(str5);
+    </script>
+</body>
+
+</html>
